@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(del *)",
+      "Bash(npm install *)",
+      "Bash(npm *)",
+      "Bash(move *)"
+    ]
+  },
+  "$version": 3
+}
