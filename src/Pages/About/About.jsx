@@ -1,15 +1,10 @@
-import AboutIntro from "./Introduction";
-import AboutChairman from "./Chairman";
-import AboutDirector from "./Director";
-import AboutVision from "./Vision";
+import React from "react";
+import WhoWeAre from "./WhoWeAre";
 
 const About = () => {
   return (
     <div>
-      <AboutIntro />
-      <AboutChairman />
-      <AboutDirector />
-      <AboutVision />
+      <WhoWeAre/>
     </div>
   );
 };

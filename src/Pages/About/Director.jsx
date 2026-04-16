@@ -7,7 +7,7 @@ const Director = () => {
       <div className="flex justify-center relative mb-8">
         <div className="absolute bottom-4 left-0 right-0 h-[2px] bg-green-600"></div>
         <h1 className="relative z-10 text-2xl font-bold py-2 px-6 mb-4 bg-green-600 text-white">
-          Chairman Message
+          Director Message
         </h1>
       </div>
 

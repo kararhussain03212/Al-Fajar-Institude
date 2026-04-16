@@ -1,111 +1,182 @@
-import { FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
+import React from "react";
+import { Link } from "react-router-dom";
+import { 
+  FaFacebookF, 
+  FaTwitter, 
+  FaInstagram, 
+  FaLinkedinIn, 
+  FaYoutube 
+} from "react-icons/fa";
+
+const footerLinks = {
+  admissions: {
+    title: "Admissions",
+    links: [
+      { name: "Undergraduate", href: "/admissions/undergraduate" },
+      { name: "Graduate", href: "/admissions/graduate" },
+      { name: "Professional Education", href: "/admissions/professional" },
+      { name: "Financial Aid", href: "/financial-aid" },
+      { name: "Visit Campus", href: "/visit" },
+    ],
+  },
+  academics: {
+    title: "Academics",
+    links: [
+      { name: "Schools & Departments", href: "/academics/schools" },
+      { name: "Programs & Courses", href: "/academics/programs" },
+      { name: "Research", href: "/research" },
+      { name: "Libraries", href: "/libraries" },
+      { name: "Online Learning", href: "/online-learning" },
+    ],
+  },
+  campusLife: {
+    title: "Campus Life",
+    links: [
+      { name: "Housing & Dining", href: "/campus-life/housing" },
+      { name: "Student Organizations", href: "/campus-life/organizations" },
+      { name: "Health & Wellness", href: "/campus-life/wellness" },
+      { name: "Athletics", href: "/athletics" },
+      { name: "Events Calendar", href: "/events" },
+    ],
+  },
+  about: {
+    title: "About",
+    links: [
+      { name: "Mission & Vision", href: "/about/mission" },
+      { name: "Leadership", href: "/about/leadership" },
+      { name: "News & Media", href: "/news" },
+      { name: "Careers", href: "/careers" },
+      { name: "Contact Us", href: "/contact" },
+    ],
+  },
+};
+
+const socialLinks = [
+  {
+    name: "Facebook",
+    href: "https://facebook.com/alfajrinstitute",
+    icon: FaFacebookF,
+  },
+  {
+    name: "Twitter",
+    href: "https://twitter.com/alfajrinstitute",
+    icon: FaTwitter,
+  },
+  {
+    name: "Instagram",
+    href: "https://instagram.com/alfajrinstitute",
+    icon: FaInstagram,
+  },
+  {
+    name: "LinkedIn",
+    href: "https://linkedin.com/school/alfajrinstitute",
+    icon: FaLinkedinIn,
+  },
+];
 
 const Footer = () => {
-  const contactInfo = {
-    address:
-      "Khayaban e Mustafa, Mari Indus Dist Mianwali Mianwali, Punjab, Pakistan-42350",
-    phone: "+92-304-1115554",
-  };
-
-  const quickLinks = [
-    { label: "Contact Us", path: "/contact-us" },
-    { label: "About Us", path: "/about" },
-    { label: "Albums", path: "/media" },
-  ];
-
-  const getInvolved = [
-    { label: "Jobs", path: "/job" },
-    { label: "Highlights", path: "/highlight" },
-  ];
-
-  const policies = [
-    { name: "Privacy Policy", href: "/privacy-policy" },
-    { name: "Terms & Conditions", href: "/terms-and-conditions" },
-  ];
-
   return (
-    <footer className="bg-gray-100 border-t border-gray-200">
-      <div className="max-w-[1400px] mx-auto px-10 py-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          {/* Contact Section */}
-          <div>
-            <h3 className="text-gray-800 font-semibold text-lg mb-4">
-              Contact
-            </h3>
-            <div className="space-y-4">
-              <div className="flex items-start gap-2">
-                <FaMapMarkerAlt className="text-gray-600 mt-1 shrink-0" />
-                <p className="text-gray-700 text-sm leading-relaxed">
-                  {contactInfo.address}
-                </p>
-              </div>
-              <div className="flex items-center gap-2">
-                <FaPhoneAlt className="text-gray-600 shrink-0" />
-                <a
-                  href={`tel:${contactInfo.phone}`}
-                  className="text-gray-700 text-sm hover:text-[#2e7d32] transition-colors"
-                >
-                  {contactInfo.phone}
-                </a>
-              </div>
+    <footer className="relative z-30 bg-[#2d2d2d] text-white">
+      {/* Main Footer Content */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
+          {/* Brand Column */}
+          <div className="lg:col-span-1">
+            <Link to="/" className="inline-block mb-4">
+              <h3 className="text-2xl font-bold text-white">Al Fajr Institute</h3>
+            </Link>
+            <p className="text-gray-400 text-sm leading-relaxed mb-6">
+              Empowering minds, illuminating futures through excellence in education and research.
+            </p>
+            {/* Social Links */}
+            <div className="flex space-x-4">
+              {socialLinks.map((social) => {
+                const IconComponent = social.icon;
+                return (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-700 text-gray-400 hover:bg-[#8C1515] hover:text-white transition-all duration-300"
+                    aria-label={social.name}
+                  >
+                    <IconComponent className="w-4 h-4" />
+                  </a>
+                );
+              })}
             </div>
           </div>
 
-          {/* Quick Links Section */}
-          <div>
-            <h3 className="text-gray-800 font-semibold text-lg mb-4">
-              Quick Links
-            </h3>
-            <ul className="space-y-2">
-              {quickLinks.map((link, index) => (
-                <li key={index}>
-                  <a
-                    href={link.path}
-                    className="text-gray-700 text-sm hover:text-[#2e7d32] hover:underline transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Link Columns */}
+          {Object.values(footerLinks).map((section) => (
+            <div key={section.title}>
+              <h4 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">
+                {section.title}
+              </h4>
+              <ul className="space-y-3">
+                {section.links.map((link) => (
+                  <li key={link.name}>
+                    <Link
+                      to={link.href}
+                      className="text-gray-400 hover:text-white text-sm transition-colors duration-300"
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
 
-          {/* Get Involved Section */}
-          <div>
-            <h3 className="text-gray-800 font-semibold text-lg mb-4">
-              Get Involved
-            </h3>
-            <ul className="space-y-2">
-              {getInvolved.map((link, index) => (
-                <li key={index}>
-                  <a
-                    href={link.path}
-                    className="text-gray-700 text-sm hover:text-[#2e7d32] hover:underline transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+      {/* Contact Bar */}
+      <div className="border-t border-gray-700">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <div className="text-gray-400 text-sm text-center md:text-left">
+              <span>Al Fajr Institute, 123 Education Avenue, City, Country</span>
+              <span className="mx-2 hidden md:inline">|</span>
+              <a href="tel:+1234567890" className="hover:text-white transition-colors">
+                +1 (234) 567-890
+              </a>
+              <span className="mx-2 hidden md:inline">|</span>
+              <a href="mailto:info@alfajr.edu" className="hover:text-white transition-colors">
+                info@alfajr.edu
+              </a>
+            </div>
+            <Link
+              to="/contact"
+              className="text-[#006CB8] hover:text-white text-sm font-semibold transition-colors duration-300"
+            >
+              Contact Us &rsaquo;
+            </Link>
           </div>
         </div>
       </div>
-      <div className="border-t border-gray-200">
-        <div className="mx-auto w-full max-w-[1320px] px-6 md:px-10 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-gray-600 text-base text-center sm:text-left">
-            &copy; {new Date().getFullYear()} Swift Sign IT &amp; Cyber
-            Solutions. All rights reserved.
-          </p>
-          <div className="flex items-center gap-4">
-            {policies.map((policy) => (
-              <a
-                key={`${policy?.name || "policy"}-${policy?.href || ""}`}
-                href={policy?.href}
-                className="text-gray-600 text-sm hover:text-[#2e7d32] transition-colors duration-300"
-              >
-                {policy?.name}
-              </a>
-            ))}
+
+      {/* Bottom Bar */}
+      <div className="border-t border-gray-700 bg-[#8C1515]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0 text-xs text-white">
+            <div className="flex flex-wrap justify-center md:justify-start space-x-4">
+              <span>&copy; {new Date().getFullYear()} Al Fajr Institute. All rights reserved.</span>
+            </div>
+            <div className="flex flex-wrap justify-center md:justify-end space-x-4">
+              <Link to="/privacy" className="hover:text-gray-300 transition-colors">
+                Privacy Policy
+              </Link>
+              <Link to="/terms" className="hover:text-gray-300 transition-colors">
+                Terms of Use
+              </Link>
+              <Link to="/accessibility" className="hover:text-gray-300 transition-colors">
+                Accessibility
+              </Link>
+              <Link to="/sitemap" className="hover:text-gray-300 transition-colors">
+                Sitemap
+              </Link>
+            </div>
           </div>
         </div>
       </div>

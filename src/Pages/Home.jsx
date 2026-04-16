@@ -1,165 +1,99 @@
-import AnnouncementsSlider from "../components/AnnouncementsSlider";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay } from "swiper/modules";
-import { useNavigate } from "react-router-dom";
-import programs from "../Data";
-import "swiper/css";
-import "swiper/css/navigation";
+import React, { useEffect, useRef, useState } from "react";
+import { FiChevronDown } from "react-icons/fi";
+import Button from "../components/Button";
+import Navbar from "../components/Navbar";
+import CampusNews from "./CampusNews"; // Import the new component
+import Academic from "./Academic";
+import CampusLife from "./CampusLife";
+import UpcomingEvents from "./UpcomingEvents";
+import Admissions from "./Admissions";
 
 const Home = () => {
-  const navigate = useNavigate();
+  const missionRef = useRef(null);
 
-  const slides = [
-    {
-      id: 1,
-      image: "https://placehold.co/600x400",
-      alt: "Campus Event 1",
-    },
-    {
-      id: 2,
-      image: "https://placehold.co/600x400",
-      alt: "Campus Event 2",
-    },
-    {
-      id: 3,
-      image: "https://placehold.co/600x400",
-      alt: "Campus Event 3",
-    },
-    {
-      id: 4,
-      image: "https://placehold.co/600x400",
-      alt: "Campus Event 4",
-    },
-  ];
 
-  const notifications = [
-    {
-      date: "9th May 2024",
-      title: "Faculty Required",
-      link: "#",
-    },
-    {
-      date: "20th April 2024",
-      title: "Mid Term Paper",
-      link: "#",
-    },
-    {
-      date: "4th April 2024",
-      title: "BSCS Top Position Holder",
-      link: "#",
-    },
-    {
-      date: "4th April 2024",
-      title: "BS-Mathematic Top Position Holders",
-      link: "#",
-    },
-    {
-      date: "4th April 2024",
-      title: "BS English Top Position Holders",
-      link: "#",
-    },
-  ];
+
+  const handleExploreClick = () => {
+    missionRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
-    <div>
-      <AnnouncementsSlider />
+    <div className="min-h-screen">
 
-      {/* Slider + Notifications Section */}
-      <div className="max-w-[1400px] mx-auto px-10 py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-          {/* Left Side - Image Slider */}
-          <div className="w-full">
-            <Swiper
-              navigation={true}
-              modules={[Navigation, Autoplay]}
-              autoplay={{ delay: 3000, disableOnInteraction: false }}
-              className="rounded-lg shadow-lg"
-            >
-              {slides.map((slide) => (
-                <SwiperSlide key={slide.id}>
-                  <div className="w-full h-[400px] bg-gray-200 flex items-center justify-center">
-                    <img
-                      src={slide.image}
-                      alt={slide.alt}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
+      <div className="relative h-screen w-full">
+        <div
+          className="fixed top-0 left-0 right-0 bottom-0 w-full h-full bg-cover bg-center bg-no-repeat z-0"
+          style={{
+            backgroundImage:
+              'url("https://images.unsplash.com/20/cambridge.JPG?q=80&w=1147&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")',
+          }}
+        >
+          <div className="absolute inset-0 bg-black/30"></div>
+        </div>
+
+        <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none px-4">
+          <h1 className="text-white text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-serif font-bold tracking-tight drop-shadow-2xl text-center">
+            Al Fajr Institute
+          </h1>
+        </div>
+
+        <Button
+          onClick={handleExploreClick}
+          variant="primary"
+          className="absolute bottom-0 left-0 right-0 z-20 w-full py-3 sm:py-2 space-x-2"
+        >
+          <span className="font-semibold text-base sm:text-sm">
+            Explore Al Fajr
+          </span>
+          <FiChevronDown className="w-4 h-4 sm:w-5 sm:h-5" />
+        </Button>
+      </div>
+
+      {/* MISSION SECTION */}
+      <div ref={missionRef} className="relative z-30 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-32">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
+              A Vision
+            </h2>
+            <p className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
+              Our vision is to produce responsible, well-educated, and skilled
+              youth who will lead the nation toward a brighter and better
+              future. We aim to contribute to society by cultivating a
+              generation that is effective, sincere, and capable of making a
+              positive and meaningful impact on the development of both society
+              and the nation.
+            </p>
           </div>
 
-          {/* Right Side - Notifications */}
-          <div className="bg-gray-50 rounded-lg shadow-md overflow-hidden">
-            {/* Notifications Header */}
-            <div className="bg-[#2e7d32] text-white px-6 py-3">
-              <h2 className="text-lg font-bold">Notifications</h2>
-            </div>
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
+              A Mission
+            </h2>
+            <p className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
+              Our mission is to establish an institute that provides
+              high-quality education on par with leading institutions worldwide,
+              offering an excellent learning environment to cultivate
+              well-educated and skilled citizens. These individuals will be able
+              to understand and fulfill their social responsibilities, becoming
+              effective and distinguished members of society, thereby
+              contributing to the prosperity and greatness of our nation.
+            </p>
+          </div>
 
-            {/* Notifications List */}
-            <div className="p-6">
-              <ul className="space-y-4">
-                {notifications.map((notification, index) => (
-                  <li
-                    key={index}
-                    className="border-b border-gray-200 last:border-b-0 pb-3 last:pb-0"
-                  >
-                    <a
-                      href={notification.link}
-                      className="text-gray-700 hover:text-[#2e7d32] transition-colors group"
-                    >
-                      <span className="font-semibold text-gray-900">
-                        {notification.date}
-                      </span>{" "}
-                      —{" "}
-                      <span className="group-hover:underline">
-                        {notification.title}
-                      </span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <div className="flex justify-center">
+            <Button to="/about" variant="primary" size="lg">
+              More About Al Fajr
+            </Button>
           </div>
         </div>
       </div>
 
-      {/* Academic Programs Section */}
-      <div className="bg-gray-50 border border-gray-200 rounded-lg max-w-[1400px] mx-auto px-10 py-8 mb-8">
-        {/* Section Header */}
-        <div className="flex items-center gap-3 mb-6">
-          <h2 className="text-lg font-bold text-gray-800 whitespace-nowrap">
-            Academic Programs
-          </h2>
-          <div className="flex-1 border-t-2 border-dotted border-gray-300"></div>
-        </div>
-
-        {/* Programs Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {programs.map((program) => (
-            <div
-              key={program.id}
-              onClick={() => navigate(program.path)}
-              className={`${program.color} rounded-lg p-8 flex flex-col items-center justify-center h-[250px]  gap-4 text-white cursor-pointer hover:opacity-90  transition-all shadow-md`}
-            >
-              <span className="text-5xl">
-                {program.icon && <program.icon />}
-              </span>
-              <h3 className="text-center font-bold text-sm">{program.title}</h3>
-            </div>
-          ))}
-        </div>
-
-        {/* View All Link */}
-        <div className="text-right mt-4">
-          <a
-            href="/academic"
-            className="text-[#6c5ce7] hover:underline font-medium text-sm"
-          >
-            view all
-          </a>
-        </div>
-      </div>
+      <CampusNews />
+      <Academic />
+      <CampusLife/>
+      <UpcomingEvents/>
+      <Admissions/>
     </div>
   );
 };
