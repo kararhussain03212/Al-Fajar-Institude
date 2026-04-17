@@ -142,7 +142,7 @@ const CampusLife = () => {
             size="lg"
             className="text-base sm:text-lg"
           >
-            More about academics
+            More about Campus Life
           </Button>
         </div>
       </div>

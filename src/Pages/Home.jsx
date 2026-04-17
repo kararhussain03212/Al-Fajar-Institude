@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import { FiChevronDown } from "react-icons/fi";
 import Button from "../components/Button";
 import Navbar from "../components/Navbar";
@@ -11,21 +11,18 @@ import Admissions from "./Admissions";
 const Home = () => {
   const missionRef = useRef(null);
 
-
-
   const handleExploreClick = () => {
     missionRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <div className="min-h-screen">
-
       <div className="relative h-screen w-full">
         <div
           className="fixed top-0 left-0 right-0 bottom-0 w-full h-full bg-cover bg-center bg-no-repeat z-0"
           style={{
             backgroundImage:
-              'url("https://images.unsplash.com/20/cambridge.JPG?q=80&w=1147&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")',
+              'url("https://www.alfajr.edu.pk/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdbf8vcf8o%2Fimage%2Fupload%2Fv1682801737%2FS7480015_248db55796.jpg&w=750&q=75")',
           }}
         >
           <div className="absolute inset-0 bg-black/30"></div>
@@ -91,9 +88,9 @@ const Home = () => {
 
       <CampusNews />
       <Academic />
-      <CampusLife/>
-      <UpcomingEvents/>
-      <Admissions/>
+      <CampusLife />
+      <UpcomingEvents />
+      <Admissions />
     </div>
   );
 };

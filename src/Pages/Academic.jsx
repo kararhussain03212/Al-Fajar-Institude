@@ -79,7 +79,7 @@ const Academic = () => {
 
   return (
     <section className="relative z-30 bg-[#f4f4f4] py-12 sm:py-16 md:py-20">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 max-w-[1500px]">
+      <div className=" mx-auto px-4 sm:px-6 max-w-[1600px]">
         <header className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
             Academics
@@ -195,14 +195,14 @@ const Academic = () => {
             >
               Assistant Professor of Mechanical Engineering
             </p>
-            <a
-              href="/academic"
+            {/* <a
+              href="Academic/academic"
               className={`inline-block mt-2 text-base sm:text-lg font-semibold hover:underline transition-opacity duration-500 ${
                 isTestimonialVisible ? "opacity-100" : "opacity-0"
               }`}
             >
               Read more &rsaquo;
-            </a>
+            </a> */}
           </div>
         </div>
       </div>

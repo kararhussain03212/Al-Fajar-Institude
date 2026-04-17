@@ -13,36 +13,36 @@ const CampusNews = () => {
     {
       id: 1,
       category: "IN THE SPOTLIGHT",
-      title: "Why research matters",
-      image: "https://placehold.co/600x400?text=Research+Matters",
+      title: "Meeting with Assistant Commiss...",
+      image: "/public/news/image.png",
       size: "large",
     },
     {
       id: 2,
-      category: "ARTIFICIAL INTELLIGENCE",
-      title: "AI's big productivity boost? It's happening from the sofa",
-      image: "https://placehold.co/600x400?text=AI+Technology",
+      category: "Ist International Conference o...",
+      title: "Ist International Conference o...",
+      image: "https://res.cloudinary.com/dh6yabuea/image/upload/v1742320590/Whats_App_Image_2025_03_04_at_4_25_31_PM_1_b7cf08d2b2.jpg",
       size: "small",
     },
     {
       id: 3,
       category: "HEALTH & MEDICINE",
-      title: 'Is "The Pitt" realistic? A Stanford medical expert weighs in',
-      image: "https://placehold.co/600x400?text=Medical+Research",
+      title: 'World Literacy Day, 2024',
+      image: "https://res.cloudinary.com/dh6yabuea/image/upload/v1726041756/Literacy_day_0ed7c5fb3a.jpg",
       size: "small",
     },
     {
       id: 4,
       category: "BUSINESS",
-      title: "How Latino business owners are navigating growth, AI, and inflation",
-      image: "https://placehold.co/600x400?text=Business+Growth",
+      title: "Flood Donations",
+      image: "https://res.cloudinary.com/dbf8vcf8o/image/upload/v1682875189/flood_donation_4_627c227f85.jpg",
       size: "small",
     },
     {
       id: 5,
       category: "ACADEMICS",
       title: "In this history class, the final project is a pop song",
-      image: "https://placehold.co/600x400?text=Academic+Excellence",
+      image: "https://res.cloudinary.com/dbf8vcf8o/image/upload/v1682875189/flood_donation_3_754a4a2ed1.jpg",
       size: "small",
     },
   ];
@@ -75,7 +75,7 @@ const CampusNews = () => {
                 <img
                   src={news.image}
                   alt={news.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 object-top"
                 />
                 {news.size === "large" && (
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>

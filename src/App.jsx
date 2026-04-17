@@ -5,29 +5,21 @@ import MainLayout from "./Layouts/MainLayout";
 // Pages
 import Home from "./Pages/Home";
 import About from "./Pages/About/About";
-import Introduction from "./Pages/About/Introduction";
-import Chairman from "./Pages/About/Chairman";
-import Director from "./Pages/About/Director";
-import Vision from "./Pages/About/Vision";
+import WhoWeAre from "./Pages/About/WhoWeAre";
 import Academic from "./Pages/Academic/Academic";
-import English from "./Pages/Academic/English";
-import Mathematics from "./Pages/Academic/Mathematics";
-import Hons from "./Pages/Academic/Hons";
-import Computerscience from "./Pages/Academic/Computerscience";
-import Faculty from "./Pages/Academic/Faculty";
-import ShortCourse from "./Pages/Academic/ShortCourse";
-import Highlight from "./Pages/Highlight/Highlight";
 import Job from "./Pages/Job/Job";
-import Media from "./Pages/Media/Media";
-import Album from "./Pages/Media/Album";
-import Video from "./Pages/Media/Video";
-import Clipping from "./Pages/Media/Clipping";
-import Notification from "./Pages/Media/Notification";
-import Vital from "./Pages/Media/Vital";
+import JobDetails from "./Pages/Job/JobDetails";
+import CampusNews from "./Pages/CampusNews";
+import Admissions from "./Pages/Admissions";
+import News from "./Pages/News/News";
+import NewsDetailPage from "./Pages/News/NewsDetailPage";
+import Events from "./Pages/Events/Events";
+import EventDetailPage from "./Pages/Events/EventDetailPage";
 import Conference from "./Pages/Conference";
 import Contactus from "./Pages/Contactus";
 import Downloads from "./Pages/Downloads";
 import NotFound from "./Pages/NotFound/NotFound";
+import CampusLifePage from "./Pages/Academic/CampusLife";
 
 function App() {
   return (
@@ -38,28 +30,18 @@ function App() {
           {/* Public Routes */}
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/about/introduction" element={<Introduction />} />
-          <Route path="/about/chairman" element={<Chairman />} />
-          <Route path="/about/director" element={<Director />} />
-          <Route path="/about/vision" element={<Vision />} />
+          <Route path="/about/who-we-are" element={<WhoWeAre />} />
           <Route path="/academic" element={<Academic />} />
-          <Route path="/academic/english" element={<English />} />
-          <Route path="/academic/mathematics" element={<Mathematics />} />
-          <Route path="/academic/hons" element={<Hons />} />
-          <Route
-            path="/academic/computerscience"
-            element={<Computerscience />}
-          />
-          <Route path="/academic/faculty" element={<Faculty />} />
-          <Route path="/academic/shortcourse" element={<ShortCourse />} />
-          <Route path="/highlight" element={<Highlight />} />
           <Route path="/job" element={<Job />} />
-          <Route path="/media" element={<Media />} />
-          <Route path="/media/album" element={<Album />} />
-          <Route path="/media/videos" element={<Video />} />
-          <Route path="/media/clipping" element={<Clipping />} />
-          <Route path="/media/notification" element={<Notification />} />
-          <Route path="/media/vital" element={<Vital />} />
+          <Route path="/job/:id" element={<JobDetails />} />
+          <Route path="/campus-news" element={<CampusNews />} />
+          <Route path="/campus-life" element={<CampusLifePage />} />
+          <Route path="/upcoming-events" element={<Events />} />
+          <Route path="/events" element={<Events />} />
+          <Route path="/events/:id" element={<EventDetailPage />} />
+          <Route path="/admissions" element={<Admissions />} />
+          <Route path="/news" element={<News />} />
+          <Route path="/news/:id" element={<NewsDetailPage />} />
           <Route path="/conference" element={<Conference />} />
           <Route path="/contact-us" element={<Contactus />} />
           <Route path="/downloads" element={<Downloads />} />

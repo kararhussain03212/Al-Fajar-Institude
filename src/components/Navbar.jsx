@@ -1,6 +1,6 @@
 ﻿import React, { useEffect, useState } from "react";
 import { FiSearch, FiX, FiMenu, FiGlobe } from "react-icons/fi";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = ({ transparentOnHero = false }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -42,19 +42,25 @@ const Navbar = ({ transparentOnHero = false }) => {
   ];
 
   const mainNavItems = [
-    { label: "Academics", href: "#" },
+    { label: "Academics", href: "/academic" },
     { label: "Research", href: "#" },
     { label: "Health Care", href: "#" },
-    { label: "Campus Life", href: "#" },
+    { label: "Campus Life", href: "/campus-life" },
     { label: "Athletics", href: "#" },
     { label: "Admission", href: "#" },
-    { label: "About", href: "#" },
-    { label: "News", href: "#" },
-    { label: "Events", href: "#" },
+    { label: "About", href: "/about" },
+    { label: "News", href: "/news" },
+    { label: "Events", href: "/events" },
   ];
 
   return (
-    <header className="w-full fixed top-0 left-0 right-0 z-50">
+    <header
+      className={`w-full z-50 ${
+        shouldUseHeroTransparency
+          ? "fixed top-0 left-0 right-0"
+          : "relative"
+      }`}
+    >
       <div
         className={`text-white transition-colors duration-300 ${
           transparent ? "bg-transparent" : "bg-[#8C1515]"
@@ -63,12 +69,7 @@ const Navbar = ({ transparentOnHero = false }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-17">
             <div className="flex-shrink-0">
-              <a
-                href="#"
-                className="text-xl sm:text-3xl font-serif font-bold tracking-tight hover:opacity-90 transition-opacity"
-              >
-                Al Fajr Institute
-              </a>
+              <Link to="/" className="text-xl sm:text-3xl font-serif font-bold tracking-tight hover:opacity-90 transition-opacity">Al Fajr Institute</Link>
             </div>
 
             <div className="hidden lg:flex items-center space-x-6">
@@ -254,3 +255,4 @@ const Navbar = ({ transparentOnHero = false }) => {
 };
 
 export default Navbar;
+

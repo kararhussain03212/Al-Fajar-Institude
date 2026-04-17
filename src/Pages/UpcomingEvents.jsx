@@ -1,44 +1,26 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { allEvents } from "../Data";
 
-const events = [
-  {
-    id: 1,
-    date: { month: "APR", day: "16" },
-    category: "EXHIBITION",
-    title: "Art of Science 2026",
-    time: "05:00 AM PT",
-    image: "https://images.unsplash.com/photo-1541367777708-7905fe3296c0?q=80&w=600&auto=format&fit=crop",
-    link: "/about/chairman",
-  },
-  {
-    id: 2,
-    date: { month: "APR", day: "16" },
-    category: "LECTURE/PRESENTATION/TALK",
-    title: "Criminal War and Peace",
-    time: "03:30 PM PT",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop",
-    link: "/events/criminal-war-and-peace",
-  },
-  {
-    id: 3,
-    date: { month: "APR", day: "16" },
-    category: "LECTURE/PRESENTATION/TALK",
-    title: "3 Minute Thesis Competition",
-    time: "04:00 PM PT",
-    image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=600&auto=format&fit=crop",
-    link: "/events/3-minute-thesis",
-  },
-  {
-    id: 4,
-    date: { month: "APR", day: "16" },
-    category: "EXHIBITION",
-    title: "New Orleans as Method: An End-of-Course Exhibition and Celebration",
-    time: "04:00 PM PT",
-    image: "https://images.unsplash.com/photo-1518998053901-5348d3961a04?q=80&w=600&auto=format&fit=crop",
-    link: "/events/new-orleans-exhibition",
-  },
-];
+const getEventBadgeDate = (dateText) => {
+  const parts = dateText.split(", ");
+  const monthDay = parts[1] || "";
+  const [month = "APR", day = "01"] = monthDay.split(" ");
+  return {
+    month: month.slice(0, 3).toUpperCase(),
+    day,
+  };
+};
+
+const events = allEvents.slice(0, 4).map((event) => ({
+  id: event.id,
+  date: getEventBadgeDate(event.date),
+  category: event.type,
+  title: event.title,
+  time: event.time,
+  image: event.image,
+  link: `/events/${event.id}`,
+}));
 
 const UpcomingEvents = () => {
   return (
