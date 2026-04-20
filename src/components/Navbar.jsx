@@ -35,10 +35,10 @@ const Navbar = ({ transparentOnHero = false }) => {
 
   const topNavItems = [
     { label: "Students", href: "#" },
-    { label: "Faculty & Staff", href: "#" },
-    { label: "Families", href: "#" },
+    { label: "Faculty & Staff", href: "/faculty" },
     { label: "Visitors", href: "#" },
     { label: "Alumni", href: "#" },
+    { label: "Download", href: "/download" },
   ];
 
   const mainNavItems = [
@@ -47,7 +47,7 @@ const Navbar = ({ transparentOnHero = false }) => {
     { label: "Health Care", href: "#" },
     { label: "Campus Life", href: "/campus-life" },
     { label: "Athletics", href: "#" },
-    { label: "Admission", href: "#" },
+    { label: "Admission", href: "/admissions/detail" },
     { label: "About", href: "/about" },
     { label: "News", href: "/news" },
     { label: "Events", href: "/events" },

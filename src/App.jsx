@@ -7,10 +7,17 @@ import Home from "./Pages/Home";
 import About from "./Pages/About/About";
 import WhoWeAre from "./Pages/About/WhoWeAre";
 import Academic from "./Pages/Academic/Academic";
+import Faculty from "./Pages/Academic/Faculty";
+import ComputerScience from "./Pages/Academic/ComputerScience";
+import English from "./Pages/Academic/English";
+import Mathematics from "./Pages/Academic/Mathematics";
+import ShortCourse from "./Pages/Academic/ShortCourse";
+import BAHons from "./Pages/Academic/BAHons";
 import Job from "./Pages/Job/Job";
 import JobDetails from "./Pages/Job/JobDetails";
 import CampusNews from "./Pages/CampusNews";
 import Admissions from "./Pages/Admissions";
+import AdmissionDetail from "./Pages/Admission/AdmissionDetail";
 import News from "./Pages/News/News";
 import NewsDetailPage from "./Pages/News/NewsDetailPage";
 import Events from "./Pages/Events/Events";
@@ -19,7 +26,7 @@ import Conference from "./Pages/Conference";
 import Contactus from "./Pages/Contactus";
 import Downloads from "./Pages/Downloads";
 import NotFound from "./Pages/NotFound/NotFound";
-import CampusLifePage from "./Pages/Academic/CampusLife";
+import CampusLifePage from "./Campus/CampusLife";
 
 function App() {
   return (
@@ -31,7 +38,13 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/about/who-we-are" element={<WhoWeAre />} />
+          <Route path="/faculty" element={<Faculty />} />
           <Route path="/academic" element={<Academic />} />
+          <Route path="/academic/computer-science" element={<ComputerScience />} />
+          <Route path="/academic/english" element={<English />} />
+          <Route path="/academic/mathematics" element={<Mathematics />} />
+          <Route path="/academic/shortcourse" element={<ShortCourse />} />
+          <Route path="/academic/hons" element={<BAHons />} />
           <Route path="/job" element={<Job />} />
           <Route path="/job/:id" element={<JobDetails />} />
           <Route path="/campus-news" element={<CampusNews />} />
@@ -40,6 +53,10 @@ function App() {
           <Route path="/events" element={<Events />} />
           <Route path="/events/:id" element={<EventDetailPage />} />
           <Route path="/admissions" element={<Admissions />} />
+          <Route path="/admissions/detail" element={<AdmissionDetail />} />
+          <Route path="/admissions/undergraduate" element={<AdmissionDetail />} />
+          <Route path="/admissions/graduate" element={<AdmissionDetail />} />
+          <Route path="/admissions/professional" element={<AdmissionDetail />} />
           <Route path="/news" element={<News />} />
           <Route path="/news/:id" element={<NewsDetailPage />} />
           <Route path="/conference" element={<Conference />} />

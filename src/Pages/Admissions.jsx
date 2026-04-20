@@ -67,7 +67,7 @@ const Admissions = () => {
             Ready to begin your journey at Al Fajr Institute?
           </p>
           <Link
-            to="/apply"
+            to="/admissions/detail"
             className="inline-block bg-[#8C1515] hover:bg-[#6f1111] text-white text-base sm:text-lg font-semibold px-10 py-4 min-w-[200px] text-center transition-colors duration-300 shadow-md hover:shadow-lg"
           >
             Start Your Application
