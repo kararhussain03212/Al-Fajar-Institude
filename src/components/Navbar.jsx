@@ -36,9 +36,9 @@ const Navbar = ({ transparentOnHero = false }) => {
   const topNavItems = [
     { label: "Students", href: "#" },
     { label: "Faculty & Staff", href: "/faculty" },
-    { label: "Visitors", href: "#" },
+    { label: "Jobs", href: "/job" },
     { label: "Alumni", href: "#" },
-    { label: "Download", href: "/download" },
+    { label: "Download", href: "/downloads" },
   ];
 
   const mainNavItems = [

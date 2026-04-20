@@ -56,11 +56,6 @@ const programCategories = [
         description: "Strengthen communication, literature, and language skills for education, media, and professional roles.",
         to: "/academic/english",
       },
-    ],
-  },
-  {
-    title: "BBA Hons",
-    items: [
       {
         label: "BS Business Administration",
         description: "Gain leadership, finance, marketing, and management knowledge to lead in business environments.",

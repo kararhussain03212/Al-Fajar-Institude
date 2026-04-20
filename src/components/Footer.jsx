@@ -46,7 +46,7 @@ const footerLinks = {
       { name: "Leadership", href: "/about/leadership" },
       { name: "News & Media", href: "/news" },
       { name: "Careers", href: "/careers" },
-      { name: "Contact Us", href: "/contact" },
+      { name: "Contact Us", href: "/contact-us" },
     ],
   },
 };
@@ -147,7 +147,7 @@ const Footer = () => {
               </a>
             </div>
             <Link
-              to="/contact"
+              to="/contact-us"
               className="text-[#006CB8] hover:text-white text-sm font-semibold transition-colors duration-300"
             >
               Contact Us &rsaquo;

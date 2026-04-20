@@ -30,7 +30,7 @@ Sincerely,`,
   ];
 
   return (
-    <section className="bg-white pt-[120px] sm:pt-[140px] md:pt-[148px] pb-12 sm:pb-16 md:pb-20">
+    <section className="bg-white  pb-12 sm:pb-16 md:pb-20">
       <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-[1600px]">
         {/* Heading */}
         <div className="text-center mb-10 sm:mb-16 md:mb-20">
