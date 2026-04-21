@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 // DATA
 const stats = [
@@ -16,14 +17,14 @@ const campusSections = [
         image:
           "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&q=80&auto=format&fit=crop",
         text: "Student Affairs provides leadership, residential programs, and community engagement.",
-        link: { text: "Student Affairs", url: "#" },
+        link: { text: "Student Affairs", url: "/campus-life" },
       },
       {
         title: "Housing & Dining",
         image:
           "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=80&auto=format&fit=crop",
         text: "Students reside in multiple residences with dining halls and healthy meals.",
-        link: { text: "Residential & Dining Enterprises", url: "#" },
+        link: { text: "Residential & Dining Enterprises", url: "/campus-life" },
       },
       {
         title: "Community Engagement",
@@ -31,9 +32,9 @@ const campusSections = [
           "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&q=80&auto=format&fit=crop",
         text: "Programs supporting the student community:",
         links: [
-          { text: "Public Service", url: "#" },
-          { text: "Spiritual Life", url: "#" },
-          { text: "Graduate Life", url: "#" },
+          { text: "Public Service", url: "/conference" },
+          { text: "Spiritual Life", url: "/about" },
+          { text: "Graduate Life", url: "/admissions/graduate" },
         ],
       },
     ],
@@ -46,14 +47,14 @@ const campusSections = [
         image:
           "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&q=80&auto=format&fit=crop",
         text: "Student Affairs provides leadership, residential programs, and community engagement.",
-        link: { text: "Student Affairs", url: "#" },
+        link: { text: "Student Affairs", url: "/campus-life" },
       },
       {
         title: "Housing & Dining",
         image:
           "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=80&auto=format&fit=crop",
         text: "Students reside in multiple residences with dining halls and healthy meals.",
-        link: { text: "Residential & Dining Enterprises", url: "#" },
+        link: { text: "Residential & Dining Enterprises", url: "/campus-life" },
       },
       {
         title: "Community Engagement",
@@ -61,9 +62,9 @@ const campusSections = [
           "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&q=80&auto=format&fit=crop",
         text: "Programs supporting the student community:",
         links: [
-          { text: "Public Service", url: "#" },
-          { text: "Spiritual Life", url: "#" },
-          { text: "Graduate Life", url: "#" },
+          { text: "Public Service", url: "/conference" },
+          { text: "Spiritual Life", url: "/about" },
+          { text: "Graduate Life", url: "/admissions/graduate" },
         ],
       },
     ],
@@ -73,9 +74,9 @@ const campusSections = [
 const CampusLife = () => {
   return (
     <section className="min-h-screen bg-white text-gray-900">
-      <div className="max-w-[1200px] mx-auto my-15">
-        <h1 className="flex text-4xl font-bold justify-center my-5">Campus Life</h1>
-        <p className="flex text-2xl justify-center max-w-3xl mx-auto text-center mb-10">
+      <div className="max-w-300 mx-auto my-15">
+        <h1 className="flex text-3xl sm:text-4xl font-bold justify-center my-5">Campus Life</h1>
+        <p className="flex text-lg sm:text-2xl justify-center max-w-3xl mx-auto text-center mb-10 px-4">
           Our thriving residential campus is home to a community of creative and
           accomplished people from around the world.
         </p>
@@ -83,7 +84,7 @@ const CampusLife = () => {
         <div className="px-4 pt-6">
           <img
             src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=1200&q=80&auto=format&fit=crop"
-            className="w-full h-72 md:h-[500px] object-cover"
+            className="w-full h-72 md:h-125 object-cover"
           />
         </div>
 
@@ -116,27 +117,27 @@ const CampusLife = () => {
                   />
 
                   <h3 className="font-bold text-2xl mb-1">{card.title}</h3>
-                  <p className="text-gray-600 text-l mb-2">{card.text}</p>
+                  <p className="text-gray-600 text-base mb-2">{card.text}</p>
 
                   {card.link && (
-                    <a
-                      href={card.link.url}
-                      className="text-blue-700 text-s hover:underline"
+                    <Link
+                      to={card.link.url}
+                      className="text-blue-700 text-sm hover:underline"
                     >
                       {card.link.text} &rsaquo;
-                    </a>
+                    </Link>
                   )}
 
                   {card.links && (
                     <ul className="space-y-1 mt-2">
                       {card.links.map((item) => (
                         <li key={item.text}>
-                          <a
-                            href={item.url}
+                          <Link
+                            to={item.url}
                             className="text-blue-700 text-xs hover:underline"
                           >
                             {item.text} &rsaquo;
-                          </a>
+                          </Link>
                         </li>
                       ))}
                     </ul>

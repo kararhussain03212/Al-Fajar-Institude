@@ -1,13 +1,13 @@
 import React from "react";
 import { FiFileText, FiDownload } from "react-icons/fi";
 
-import schemeComputerScience from "../assets/Files/Schemas_Study_of_Computer_Science_b10e2de46e.pdf";
-import schemeEnglish from "../assets/Files/Scheme_Study_of_English_9aa0168dd5.pdf";
-import schemeMath from "../assets/Files/Scheme_study_of_Math_cfd9fe01a8.pdf";
-import schemeBBA from "../assets/Files/Schemas_Study_of_BBA_5e9b82d1ae.pdf";
-import admissionForm from "../assets/Files/AFI_Admission_Form_37026b42a2.pdf";
-import libraryStudentForm from "../assets/Files/Library_Membership_Form_for_Students_d58dd8dbc9.pdf";
-import libraryFacultyForm from "../assets/Files/Library_Membership_Form_for_Faculty_aac60c594a.pdf";
+import schemeComputerScience from "../assets/Downloads/Schemas_Study_of_Computer_Science_b10e2de46e.pdf";
+import schemeEnglish from "../assets/Downloads/Scheme_Study_of_English_9aa0168dd5.pdf";
+import schemeMath from "../assets/Downloads/Scheme_study_of_Math_cfd9fe01a8.pdf";
+import schemeBBA from "../assets/Downloads/Schemas_Study_of_BBA_5e9b82d1ae.pdf";
+import admissionForm from "../assets/Downloads/AFI_Admission_Form_37026b42a2.pdf";
+import libraryStudentForm from "../assets/Downloads/Library_Membership_Form_for_Students_d58dd8dbc9.pdf";
+import libraryFacultyForm from "../assets/Downloads/Library_Membership_Form_for_Faculty_aac60c594a.pdf";
 
 const downloadItems = [
   {
@@ -62,10 +62,10 @@ const Downloads = () => {
           <table className="min-w-full border-collapse">
             <thead>
               <tr className="bg-gray-100">
-                <th className="border-b border-gray-200 px-4 py-3 text-left text-s font-semibold text-gray-900">
+                <th className="border-b border-gray-200 px-4 py-3 text-left text-sm font-semibold text-gray-900">
                   Title
                 </th>
-                <th className="border-b border-gray-200 px-4 py-3 text-left text-s font-semibold text-gray-900 sm:w-72">
+                <th className="border-b border-gray-200 px-4 py-3 text-left text-sm font-semibold text-gray-900 sm:w-72">
                   Download
                 </th>
               </tr>

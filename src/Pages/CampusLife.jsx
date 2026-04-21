@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import Button from "../components/Button";
 
 const cards = [
@@ -7,7 +8,7 @@ const cards = [
     description:
       "A residential campus with diverse housing, exceptional dining, and over 600 student organizations",
     linkText: "Student Affairs",
-    link: "/academic/english",
+    link: "/campus-life",
     image:
       "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=900&auto=format&fit=crop",
   },
@@ -16,7 +17,7 @@ const cards = [
     description:
       "Uplifting academic freedom and free speech; curiosity and critical inquiry; open, inclusive exchange of ideas; and civic engagement and citizenship",
     linkText: "ePluribus",
-    link: "/academic/english",
+    link: "/campus-life",
     image:
       "https://images.unsplash.com/photo-1558970439-add78fc68990?q=80&w=1620&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
@@ -24,7 +25,7 @@ const cards = [
     title: "Recreation & Wellness",
     description:
       "State-of-the-art facilities and fitness programs to encourage movement and play",
-    link: "/academic/english",
+    link: "/campus-life",
     linkText: "Recreation & Wellness",
     image:
       "https://www.stanford.edu/wp-content/uploads/2022/04/Campus-life-3.jpg",
@@ -34,7 +35,7 @@ const cards = [
 const schools = [
   {
     title: "Mathematics",
-    link: "/academic/english",
+    link: "/academic/mathematics",
   },
   {
     title: "English",
@@ -42,15 +43,15 @@ const schools = [
   },
   {
     title: "Computer Science",
-    link: "/academic/english",
+    link: "/academic/computer-science",
   },
   {
     title: "BBA Hons",
-    link: "/academic/english",
+    link: "/academic/hons",
   },
   {
     title: "Short Courses",
-    link: "/academic/english",
+    link: "/academic/shortcourse",
   },
 ];
 
@@ -79,7 +80,7 @@ const CampusLife = () => {
 
   return (
     <section className="relative z-30 bg-[#f4f4f4] py-12 sm:py-16 md:py-20">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 max-w-[1500px]">
+      <div className="max-w-375 mx-auto px-4 sm:px-6">
         <header className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
             Campus Life
@@ -93,7 +94,7 @@ const CampusLife = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12">
           {cards.map((card) => (
             <article key={card.title} className="min-w-0">
-              <div className="aspect-[16/10] overflow-hidden">
+              <div className="aspect-16/10 overflow-hidden">
                 <img
                   src={card.image}
                   alt={card.title}
@@ -107,12 +108,12 @@ const CampusLife = () => {
               <p className="mt-2 text-gray-700 text-base sm:text-lg leading-relaxed">
                 {card.description}
               </p>
-              <a
-                href={card.link}
+              <Link
+                to={card.link}
                 className="inline-block mt-3 text-base sm:text-lg text-[#006CB8] hover:underline"
               >
                 {card.linkText} &rsaquo;
-              </a>
+              </Link>
             </article>
           ))}
         </div>
@@ -124,9 +125,9 @@ const CampusLife = () => {
           <ul className="mt-4 flex flex-wrap justify-center items-center text-base sm:text-lg leading-tight">
             {schools.map((school, index) => (
               <li key={school.title} className="text-[#006CB8]">
-                <a href={school.link} className="hover:underline">
+                <Link to={school.link} className="hover:underline">
                   {school.title}
-                </a>
+                </Link>
                 {index < schools.length - 1 && (
                   <span className="text-black mx-2 sm:mx-3">|</span>
                 )}
@@ -149,7 +150,7 @@ const CampusLife = () => {
 
       <div
         ref={testimonialRef}
-        className="relative mt-12 sm:mt-16 h-[420px] sm:h-[520px] md:h-[620px] overflow-hidden"
+        className="relative mt-12 sm:mt-16 h-105 sm:h-130 md:h-155 overflow-hidden"
       >
         <div
           className={`absolute inset-0 transition-opacity duration-500 ${
@@ -195,14 +196,14 @@ const CampusLife = () => {
             >
               Assistant Professor of Mechanical Engineering
             </p>
-            <a
-              href="/academic"
+            <Link
+              to="/academic"
               className={`inline-block mt-2 text-base sm:text-lg font-semibold hover:underline transition-opacity duration-500 ${
                 isTestimonialVisible ? "opacity-100" : "opacity-0"
               }`}
             >
               Read more &rsaquo;
-            </a>
+            </Link>
           </div>
         </div>
       </div>

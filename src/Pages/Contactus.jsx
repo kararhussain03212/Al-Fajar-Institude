@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import {
   FiCheckCircle,
   FiClock,
@@ -23,9 +22,9 @@ const contactInfo = [
   },
   {
     title: "Email",
-    value: "info@alfajr.edu",
+    value: "info@ssdo.org.pk",
     icon: FiMail,
-    href: "mailto:info@alfajr.edu",
+    href: "mailto:info@ssdo.org.pk",
   },
   {
     title: "Office Hours",
@@ -85,29 +84,10 @@ const Contactus = () => {
 
   return (
     <section className="bg-[#f5f5f5] pb-14">
-      <div className="relative h-72 overflow-hidden sm:h-80">
-        <img
-          src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?q=80&w=2000&auto=format&fit=crop"
-          alt="Contact Al Fajr Institute"
-          className="absolute inset-0 h-full w-full object-cover"
-        />
-        <div className="absolute inset-0 bg-linear-to-r from-[#101826]/85 to-[#8C1515]/70" />
-
         <div className="relative mx-auto flex h-full max-w-6xl flex-col justify-center px-4 text-white sm:px-6">
-          <div className="mb-3 text-sm text-white/90">
-            <Link to="/" className="hover:text-white">
-              Home
-            </Link>
-            <span className="mx-2">/</span>
-            <span>Contact Us</span>
-          </div>
-          <h1 className="text-4xl font-bold sm:text-5xl">Contact Us</h1>
-          <p className="mt-3 max-w-2xl text-white/90">
-            We would love to hear from you. Reach us for admissions, academic inquiries,
-            partnerships, and general support.
-          </p>
+          <h1 className="text-4xl font-bold sm:text-5xl text-black mt-10">Contact Us</h1>
         </div>
-      </div>
+
 
       <div className="mx-auto mt-10 max-w-6xl px-4 sm:px-6">
         <div className="grid grid-cols-1 gap-7 lg:grid-cols-[360px_1fr]">
@@ -136,19 +116,7 @@ const Contactus = () => {
               );
             })}
 
-            <article className="border border-gray-200 bg-[#8C1515] p-5 text-white">
-              <h2 className="text-xl font-semibold">Admissions Help Desk</h2>
-              <p className="mt-2 text-white/90">
-                Need help with the admission process? Our team is available for guidance.
-              </p>
-              <a
-                href="mailto:admissions@alfajr.edu"
-                className="mt-4 inline-flex items-center gap-2 border border-white px-4 py-2 text-sm font-semibold hover:bg-white hover:text-[#8C1515]"
-              >
-                Email Admissions
-                <FiSend />
-              </a>
-            </article>
+            
           </aside>
 
           <div className="border border-gray-200 bg-white p-6 sm:p-8">

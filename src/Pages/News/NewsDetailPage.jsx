@@ -18,6 +18,16 @@ export default function NewsDetailPage() {
   const articleId = Number(id);
   const article = allArticles.find((item) => item.id === articleId);
 
+  // Lock body scroll while popup is open
+  useEffect(() => {
+    if (!isPopupOpen) return undefined;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [isPopupOpen]);
+
   // Fallback when article does not exist
   if (!article) {
     return (
@@ -41,16 +51,6 @@ export default function NewsDetailPage() {
     .filter((item) => item.id !== article.id && item.category === article.category)
     .slice(0, 3);
   const sliderImages = article.sliderImages?.filter(Boolean) || [];
-
-  // Lock body scroll while popup is open
-  useEffect(() => {
-    if (!isPopupOpen) return undefined;
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.body.style.overflow = previousOverflow;
-    };
-  }, [isPopupOpen]);
 
   return (
     <div className="min-h-screen bg-[#f3f4f6] py-10 sm:py-12">
@@ -214,7 +214,7 @@ export default function NewsDetailPage() {
                       <img
                         src={image}
                         alt={`${article.title} gallery ${index + 1}`}
-                        className="w-full h-64 sm:h-80 md:h-[440px] object-cover cursor-zoom-in"
+                        className="w-full h-64 sm:h-80 md:h-110 object-cover cursor-zoom-in"
                       />
                     </button>
                   </SwiperSlide>
@@ -227,7 +227,7 @@ export default function NewsDetailPage() {
 
       {/* Full-screen popup slider */}
       {isPopupOpen ? (
-        <div className="fixed inset-0 z-[100] bg-black/95 px-3 sm:px-6 py-10">
+        <div className="fixed inset-0 z-100 bg-black/95 px-3 sm:px-6 py-10">
           <div className="max-w-6xl mx-auto h-full flex flex-col">
             <div className="flex justify-between items-center mb-4">
               <p className="text-white text-sm sm:text-base">

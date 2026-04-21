@@ -12,6 +12,11 @@ const facultyMembers = [
       "https://www.alfajr.edu.pk/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdbf8vcf8o%2Fimage%2Fupload%2Fv1683464459%2Fzulfiaq_zaidi_19230059eb.jpg&w=256&q=75",
     email: "jennifer.aarons@alfajr.edu",
     phone: "+1 2245 1247 241",
+    social: {
+      facebook: "https://www.facebook.com/AlFajarInstitute/",
+      linkedin: "https://linkedin.com/school/alfajrinstitute",
+      instagram: "https://instagram.com/alfajrinstitute",
+    },
   },
   {
     name: "Barry Palatnik, Ed.D",
@@ -21,6 +26,11 @@ const facultyMembers = [
       "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=900&auto=format&fit=crop",
     email: "barry.palatnik@alfajr.edu",
     phone: "+1 2245 1247 241",
+    social: {
+      facebook: "https://www.facebook.com/AlFajarInstitute/",
+      linkedin: "https://linkedin.com/school/alfajrinstitute",
+      instagram: "https://instagram.com/alfajrinstitute",
+    },
   },
   {
     name: "Marc Robinson, MBA",
@@ -30,6 +40,11 @@ const facultyMembers = [
       "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=900&auto=format&fit=crop",
     email: "marc.robinson@alfajr.edu",
     phone: "+1 2245 1247 241",
+    social: {
+      facebook: "https://www.facebook.com/AlFajarInstitute/",
+      linkedin: "https://linkedin.com/school/alfajrinstitute",
+      instagram: "https://instagram.com/alfajrinstitute",
+    },
   },
   {
     name: "Nancy Steppin, DBA",
@@ -39,6 +54,11 @@ const facultyMembers = [
       "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=900&auto=format&fit=crop",
     email: "nancy.steppin@alfajr.edu",
     phone: "+1 2245 1247 241",
+    social: {
+      facebook: "https://www.facebook.com/AlFajarInstitute/",
+      linkedin: "https://linkedin.com/school/alfajrinstitute",
+      instagram: "https://instagram.com/alfajrinstitute",
+    },
   },
 ];
 
@@ -70,7 +90,7 @@ const Faculty = () => {
         </div>
       </div>
 
-      <div className="mx-auto max-w-[1300px] px-4 py-12 sm:px-6 sm:py-14">
+      <div className="mx-auto max-w-325 px-4 py-12 sm:px-6 sm:py-14">
         <h2 className="text-4xl font-semibold text-gray-900">
           Faculty and Staff Directory
         </h2>
@@ -84,7 +104,7 @@ const Faculty = () => {
               <img
                 src={member.image}
                 alt={member.name}
-                className="h-80 w-full object-cover object-center sm:h-96 md:h-full md:min-h-[260px]"
+                className="h-80 w-full object-cover object-center sm:h-96 md:h-full md:min-h-65"
               />
 
               <div className="mt-4 sm:mt-0">
@@ -96,21 +116,27 @@ const Faculty = () => {
 
                 <div className="mt-3 flex items-center gap-3 text-gray-600">
                   <a
-                    href="#"
+                    href={member.social.facebook}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="hover:text-[#8C1515]"
                     aria-label="Facebook"
                   >
                     <FaFacebookF className="text-xs" />
                   </a>
                   <a
-                    href="#"
+                    href={member.social.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="hover:text-[#8C1515]"
                     aria-label="LinkedIn"
                   >
                     <FaLinkedinIn className="text-xs" />
                   </a>
                   <a
-                    href="#"
+                    href={member.social.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="hover:text-[#8C1515]"
                     aria-label="Instagram"
                   >
@@ -121,7 +147,9 @@ const Faculty = () => {
                 <div className="mt-3 space-y-2 text-sm text-gray-700">
                   <p className="flex items-center gap-2">
                     <FiMail className="text-[#8C1515]" />
-                    <span className="break-all">{member.email}</span>
+                    <a href={`mailto:${member.email}`} className="break-all hover:text-[#8C1515]">
+                      {member.email}
+                    </a>
                   </p>
                   <p className="flex items-center gap-2">
                     <FiPhone className="text-[#8C1515]" />

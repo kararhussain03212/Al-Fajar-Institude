@@ -20,13 +20,15 @@ import Admissions from "./Pages/Admissions";
 import AdmissionDetail from "./Pages/Admission/AdmissionDetail";
 import News from "./Pages/News/News";
 import NewsDetailPage from "./Pages/News/NewsDetailPage";
+import Announcements from "./Pages/Announcements/Announcements";
+import AnnouncmentsDetails from "./Pages/Announcements/AnnouncmentsDetails";
 import Events from "./Pages/Events/Events";
 import EventDetailPage from "./Pages/Events/EventDetailPage";
 import Conference from "./Pages/Conference";
 import Contactus from "./Pages/Contactus";
 import Downloads from "./Pages/Downloads";
 import NotFound from "./Pages/NotFound/NotFound";
-import CampusLifePage from "./Campus/CampusLife";
+import CampusLifePage from "./Pages/Campus/CampusLife";
 
 function App() {
   return (
@@ -40,7 +42,10 @@ function App() {
           <Route path="/about/who-we-are" element={<WhoWeAre />} />
           <Route path="/faculty" element={<Faculty />} />
           <Route path="/academic" element={<Academic />} />
-          <Route path="/academic/computer-science" element={<ComputerScience />} />
+          <Route
+            path="/academic/computer-science"
+            element={<ComputerScience />}
+          />
           <Route path="/academic/english" element={<English />} />
           <Route path="/academic/mathematics" element={<Mathematics />} />
           <Route path="/academic/shortcourse" element={<ShortCourse />} />
@@ -54,11 +59,19 @@ function App() {
           <Route path="/events/:id" element={<EventDetailPage />} />
           <Route path="/admissions" element={<Admissions />} />
           <Route path="/admissions/detail" element={<AdmissionDetail />} />
-          <Route path="/admissions/undergraduate" element={<AdmissionDetail />} />
+          <Route
+            path="/admissions/undergraduate"
+            element={<AdmissionDetail />}
+          />
           <Route path="/admissions/graduate" element={<AdmissionDetail />} />
-          <Route path="/admissions/professional" element={<AdmissionDetail />} />
+          <Route
+            path="/admissions/professional"
+            element={<AdmissionDetail />}
+          />
           <Route path="/news" element={<News />} />
           <Route path="/news/:id" element={<NewsDetailPage />} />
+          <Route path="/announcements" element={<Announcements />} />
+          <Route path="/announcements/:id" element={<AnnouncmentsDetails />} />
           <Route path="/conference" element={<Conference />} />
           <Route path="/contact" element={<Contactus />} />
           <Route path="/contact-us" element={<Contactus />} />

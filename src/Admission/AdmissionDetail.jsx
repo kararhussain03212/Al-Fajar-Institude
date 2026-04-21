@@ -417,7 +417,7 @@ const AdmissionDetail = () => {
             <div className="bg-[#8C1515] p-5 text-white">
               <h4 className="text-xl font-semibold">Department Contact Info</h4>
               <p className="mt-5 text-sm text-white/90">Contact:</p>
-              <p className="text-sm">admissions@alfajr.edu</p>
+              <p className="text-sm">info@ssdo.org.pk</p>
               <p className="text-sm">+92 300 0000000</p>
             </div>
           </aside>

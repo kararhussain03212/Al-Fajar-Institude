@@ -52,7 +52,7 @@ const JobDetails = () => {
 
   return (
     <section className="bg-[#f5f5f5] pb-14">
-      <div className="relative h-70 overflow-hidden sm:h-85">
+      <div className="relative h-72 overflow-hidden sm:h-96">
         <img
           src={job.image}
           alt={job.title}
@@ -178,7 +178,7 @@ const JobDetails = () => {
             </div>
 
             <a
-              href={`mailto:hr@alfajr.edu?subject=Application for ${encodeURIComponent(
+              href={`mailto:info@ssdo.org.pk?subject=Application for ${encodeURIComponent(
                 job.title
               )}`}
               className="mt-5 block bg-[#8C1515] px-5 py-3 text-center text-sm font-semibold text-white hover:bg-[#6f1111]"

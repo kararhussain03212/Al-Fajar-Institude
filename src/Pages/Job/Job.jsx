@@ -207,7 +207,7 @@ const Job = () => {
                     View Details <FiArrowRight />
                   </Link>
                   <a
-                    href={`mailto:hr@alfajr.edu?subject=Application for ${encodeURIComponent(
+                    href={`mailto:info@ssdo.org.pk?subject=Application for ${encodeURIComponent(
                       job.title
                     )}`}
                     className="inline-flex items-center gap-2 border border-[#8C1515] px-5 py-2.5 text-sm font-semibold text-[#8C1515] hover:bg-[#8C1515] hover:text-white"

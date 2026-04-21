@@ -1,4 +1,5 @@
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 
 const AnnouncementsSlider = () => {
   const scrollRef = useRef(null);
@@ -7,22 +8,22 @@ const AnnouncementsSlider = () => {
     {
       id: 1,
       text: "Faculty is required for the department of computer science, management science and english.",
-      link: "#",
+      link: "/announcements/3",
     },
     {
       id: 2,
       text: "Mid term exams for semester five will be start from 20th April 2026.",
-      link: "#",
+      link: "/announcements/2",
     },
     {
       id: 3,
       text: "Admissions are open for Fall 2026 session. Apply now!",
-      link: "#",
+      link: "/announcements/1",
     },
     {
       id: 4,
       text: "Annual sports day will be held on 25th April 2026.",
-      link: "#",
+      link: "/announcements/4",
     },
   ];
 
@@ -47,7 +48,7 @@ const AnnouncementsSlider = () => {
 
   return (
     <div className="w-full bg-white shadow-md">
-      <div className="max-w-[1400px] mx-auto flex items-center">
+      <div className="max-w-350 mx-auto flex items-center">
         {/* Announcements Label */}
         <div className="bg-[#2e7d32] text-white px-6 py-3 flex items-center gap-2 shrink-0">
           <span className="text-xl">⚡</span>
@@ -69,14 +70,14 @@ const AnnouncementsSlider = () => {
         >
           <div className="inline-flex gap-12">
             {duplicatedAnnouncements.map((announcement, index) => (
-              <a
+              <Link
                 key={`${announcement.id}-${index}`}
-                href={announcement.link}
+                to={announcement.link}
                 className="text-[#1976d2] hover:text-[#0d47a1] hover:underline font-medium text-sm whitespace-nowrap flex items-center gap-2"
               >
                 
                 {announcement.text}
-              </a>
+              </Link>
             ))}
           </div>
         </div>

@@ -31,7 +31,7 @@ Sincerely,`,
 
   return (
     <section className="bg-white  pb-12 sm:pb-16 md:pb-20">
-      <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-[1600px]">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-400">
         {/* Heading */}
         <div className="text-center mb-10 sm:mb-16 md:mb-20">
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 my-10 sm:my-12 md:my-15">
@@ -76,7 +76,7 @@ Sincerely,`,
         return (
           <div
             key={`${section.title}-${index}`}
-            className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8 mb-12 sm:mb-16 md:mb-20 last:mb-0 py-10 sm:py-14 md:py-20"
+            className="mx-auto max-w-300 px-4 sm:px-6 lg:px-8 mb-12 sm:mb-16 md:mb-20 last:mb-0 py-10 sm:py-14 md:py-20"
           >
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-0 items-center">
               {/* Text */}

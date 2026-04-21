@@ -34,23 +34,25 @@ const Navbar = ({ transparentOnHero = false }) => {
   const transparent = shouldUseHeroTransparency ? isAtTop : false;
 
   const topNavItems = [
-    { label: "Students", href: "#" },
-    { label: "Faculty & Staff", href: "/faculty" },
-    { label: "Jobs", href: "/job" },
-    { label: "Alumni", href: "#" },
-    { label: "Download", href: "/downloads" },
+    // { label: "Students", href: "#" },
+    { label: "Faculty & Staff", to: "/faculty" },
+    { label: "Jobs", to: "/job" },
+    // { label: "Alumni", href: "#" },
+    { label: "Download", to: "/downloads" },
+    { label: "Contact Us", to: "/contact-us" },
   ];
 
   const mainNavItems = [
-    { label: "Academics", href: "/academic" },
-    { label: "Research", href: "#" },
-    { label: "Health Care", href: "#" },
-    { label: "Campus Life", href: "/campus-life" },
-    { label: "Athletics", href: "#" },
-    { label: "Admission", href: "/admissions/detail" },
-    { label: "About", href: "/about" },
-    { label: "News", href: "/news" },
-    { label: "Events", href: "/events" },
+    { label: "Academics", to: "/academic" },
+    // { label: "Research", href: "#" },
+    // { label: "Health Care", href: "#" },
+    { label: "Campus Life", to: "/campus-life" },
+    // { label: "Athletics", href: "#" },
+    { label: "Admission", to: "/admissions/detail" },
+    { label: "About", to: "/about" },
+    { label: "News", to: "/news" },
+    { label: "Events", to: "/events" },
+    { label: "Announcements", to: "/announcements" },
   ];
 
   return (
@@ -67,38 +69,38 @@ const Navbar = ({ transparentOnHero = false }) => {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-17">
-            <div className="flex-shrink-0">
+          <div className="flex items-center justify-between h-16">
+            <div className="shrink-0">
               <Link to="/" className="text-xl sm:text-3xl font-serif font-bold tracking-tight hover:opacity-90 transition-opacity">Al Fajr Institute</Link>
             </div>
 
             <div className="hidden lg:flex items-center space-x-6">
-              <span className="text-l font-semibold">Information for:</span>
+              <span className="text-base font-semibold">Information for:</span>
 
               {topNavItems.map((item) => (
-                <a
+                <Link
                   key={item.label}
-                  href={item.href}
-                  className="text-l hover:underline transition-all duration-200"
+                  to={item.to}
+                  className="text-base hover:underline transition-all duration-200"
                 >
                   {item.label}
-                </a>
+                </Link>
               ))}
 
               <button
                 onClick={() => setIsSearchOpen(!isSearchOpen)}
-                className={`flex items-center justify-center space-x-1.5 text-l px-3 py-1.5 w-[90px] transition-all duration-200 ${
+                className={`flex items-center justify-center space-x-1.5 text-base px-3 py-1.5 w-22.5 transition-all duration-200 ${
                   isSearchOpen ? "bg-[#6F1111]" : "hover:opacity-80"
                 }`}
               >
                 {isSearchOpen ? (
                   <>
-                    <FiX className="w-4 h-4 flex-shrink-0" />
+                    <FiX className="w-4 h-4 shrink-0" />
                     <span>Close</span>
                   </>
                 ) : (
                   <>
-                    <FiSearch className="w-4 h-4 flex-shrink-0" />
+                    <FiSearch className="w-4 h-4 shrink-0" />
                     <span>Search</span>
                   </>
                 )}
@@ -139,15 +141,15 @@ const Navbar = ({ transparentOnHero = false }) => {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="hidden lg:flex items-center justify-center h-17 space-x-8">
+          <div className="hidden lg:flex items-center justify-center h-16 space-x-8">
             {mainNavItems.map((item) => (
-              <a
+              <Link
                 key={item.label}
-                href={item.href}
+                to={item.to}
                 className="text-black text-xl font-medium hover:text-[#8C1515] hover:underline transition-all duration-200"
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -158,13 +160,14 @@ const Navbar = ({ transparentOnHero = false }) => {
                   Main Menu
                 </p>
                 {mainNavItems.map((item) => (
-                  <a
+                  <Link
                     key={item.label}
-                    href={item.href}
+                    to={item.to}
+                    onClick={() => setIsMenuOpen(false)}
                     className="block px-2 py-2 text-gray-800 font-medium hover:bg-gray-100 hover:text-[#8C1515] rounded transition-colors"
                   >
                     {item.label}
-                  </a>
+                  </Link>
                 ))}
               </div>
 
@@ -173,13 +176,14 @@ const Navbar = ({ transparentOnHero = false }) => {
                   Information for
                 </p>
                 {topNavItems.map((item) => (
-                  <a
+                  <Link
                     key={item.label}
-                    href={item.href}
+                    to={item.to}
+                    onClick={() => setIsMenuOpen(false)}
                     className="block px-2 py-2 text-gray-700 hover:bg-gray-100 hover:text-[#8C1515] rounded transition-colors"
                   >
                     {item.label}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -232,7 +236,7 @@ const Navbar = ({ transparentOnHero = false }) => {
                 />
               </div>
 
-              <button className="bg-[#8C1515] hover:bg-[#6F1111] text-white px-8 py-3 flex items-center justify-center space-x-2 transition-colors min-w-[160px]">
+              <button className="bg-[#8C1515] hover:bg-[#6F1111] text-white px-8 py-3 flex items-center justify-center space-x-2 transition-colors min-w-40">
                 <FiGlobe className="w-4 h-4" />
                 <span className="font-medium">Search Web</span>
               </button>
@@ -240,12 +244,12 @@ const Navbar = ({ transparentOnHero = false }) => {
 
             <div className="text-center mt-6">
               <span className="text-gray-700">Other ways to search: </span>
-              <a href="#" className="text-[#006CB8] hover:underline ml-1">
+              <Link to="/contact-us" className="text-[#006CB8] hover:underline ml-1">
                 Map
-              </a>
-              <a href="#" className="text-[#006CB8] hover:underline ml-3">
+              </Link>
+              <Link to="/faculty" className="text-[#006CB8] hover:underline ml-3">
                 Profiles
-              </a>
+              </Link>
             </div>
           </div>
         </div>

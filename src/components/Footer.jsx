@@ -15,37 +15,37 @@ const footerLinks = {
       { name: "Undergraduate", href: "/admissions/undergraduate" },
       { name: "Graduate", href: "/admissions/graduate" },
       { name: "Professional Education", href: "/admissions/professional" },
-      { name: "Financial Aid", href: "/financial-aid" },
-      { name: "Visit Campus", href: "/visit" },
+      { name: "Financial Aid", href: "/downloads" },
+      { name: "Visit Campus", href: "/contact-us" },
     ],
   },
   academics: {
     title: "Academics",
     links: [
-      { name: "Schools & Departments", href: "/academics/schools" },
-      { name: "Programs & Courses", href: "/academics/programs" },
-      { name: "Research", href: "/research" },
-      { name: "Libraries", href: "/libraries" },
-      { name: "Online Learning", href: "/online-learning" },
+      { name: "Schools & Departments", href: "/academic" },
+      { name: "Programs & Courses", href: "/academic" },
+      { name: "Research", href: "/conference" },
+      { name: "Libraries", href: "/downloads" },
+      { name: "Online Learning", href: "/academic/shortcourse" },
     ],
   },
   campusLife: {
     title: "Campus Life",
     links: [
-      { name: "Housing & Dining", href: "/campus-life/housing" },
-      { name: "Student Organizations", href: "/campus-life/organizations" },
-      { name: "Health & Wellness", href: "/campus-life/wellness" },
-      { name: "Athletics", href: "/athletics" },
+      { name: "Housing & Dining", href: "/campus-life" },
+      { name: "Student Organizations", href: "/campus-life" },
+      { name: "Health & Wellness", href: "/campus-life" },
+      { name: "Athletics", href: "/events" },
       { name: "Events Calendar", href: "/events" },
     ],
   },
   about: {
     title: "About",
     links: [
-      { name: "Mission & Vision", href: "/about/mission" },
-      { name: "Leadership", href: "/about/leadership" },
+      { name: "Mission & Vision", href: "/about" },
+      { name: "Leadership", href: "/faculty" },
       { name: "News & Media", href: "/news" },
-      { name: "Careers", href: "/careers" },
+      { name: "Careers", href: "/job" },
       { name: "Contact Us", href: "/contact-us" },
     ],
   },
@@ -54,7 +54,7 @@ const footerLinks = {
 const socialLinks = [
   {
     name: "Facebook",
-    href: "https://facebook.com/alfajrinstitute",
+    href: "https://www.facebook.com/AlFajarInstitute/",
     icon: FaFacebookF,
   },
   {
@@ -136,22 +136,16 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-gray-400 text-sm text-center md:text-left">
-              <span>Al Fajr Institute, 123 Education Avenue, City, Country</span>
+              <span>Khayaban e Mustafa, Mari Indus Dist Mianwali Mianwali, Punjab, Pakistan-42350</span>
               <span className="mx-2 hidden md:inline">|</span>
               <a href="tel:+1234567890" className="hover:text-white transition-colors">
-                +1 (234) 567-890
+                 +92-304-1115554
               </a>
               <span className="mx-2 hidden md:inline">|</span>
-              <a href="mailto:info@alfajr.edu" className="hover:text-white transition-colors">
-                info@alfajr.edu
+              <a href="mailto:info@ssdo.org.pk" className="hover:text-white transition-colors">
+                info@ssdo.org.pk
               </a>
             </div>
-            <Link
-              to="/contact-us"
-              className="text-[#006CB8] hover:text-white text-sm font-semibold transition-colors duration-300"
-            >
-              Contact Us &rsaquo;
-            </Link>
           </div>
         </div>
       </div>
@@ -164,16 +158,16 @@ const Footer = () => {
               <span>&copy; {new Date().getFullYear()} Al Fajr Institute. All rights reserved.</span>
             </div>
             <div className="flex flex-wrap justify-center md:justify-end space-x-4">
-              <Link to="/privacy" className="hover:text-gray-300 transition-colors">
+              <Link to="/downloads" className="hover:text-gray-300 transition-colors">
                 Privacy Policy
               </Link>
-              <Link to="/terms" className="hover:text-gray-300 transition-colors">
+              <Link to="/downloads" className="hover:text-gray-300 transition-colors">
                 Terms of Use
               </Link>
-              <Link to="/accessibility" className="hover:text-gray-300 transition-colors">
+              <Link to="/contact-us" className="hover:text-gray-300 transition-colors">
                 Accessibility
               </Link>
-              <Link to="/sitemap" className="hover:text-gray-300 transition-colors">
+              <Link to="/about" className="hover:text-gray-300 transition-colors">
                 Sitemap
               </Link>
             </div>

@@ -118,7 +118,7 @@ const AdmissionDetail = () => {
         <div className="absolute inset-0 bg-[#101826]/45" />
 
         <div className="relative mx-auto flex h-full max-w-6xl flex-col items-center justify-center px-4 text-center text-white sm:px-6">
-          <div className="mb-4 text-sm text-white/90">
+          {/* <div className="mb-4 text-sm text-white/90">
             <Link to="/" className="hover:text-white">
               Home
             </Link>
@@ -128,14 +128,14 @@ const AdmissionDetail = () => {
             </Link>
             <span className="mx-2">/</span>
             <span>Apply Admission</span>
-          </div>
+          </div> */}
           <h1 className="text-3xl font-bold sm:text-4xl md:text-5xl">
             Apply to Al Fajr Institute
           </h1>
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-14 max-w-[1300px]">
+      <section className="mx-auto max-w-325 px-4 py-12 sm:px-6 sm:py-14">
         <h2 className="mb-5 text-3xl font-semibold text-gray-900">First-Year Applicants</h2>
         <img
           src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?q=80&w=1800&auto=format&fit=crop"
@@ -342,7 +342,7 @@ const AdmissionDetail = () => {
             <div className="bg-[#8C1515] p-5 text-white">
               <h4 className="text-xl font-semibold">Department Contact Info</h4>
               <p className="mt-5 text-sm text-white/90">Contact:</p>
-              <p className="text-sm">admissions@alfajr.edu</p>
+              <p className="text-sm">info@ssdo.org.pk</p>
               <p className="text-sm">+92 300 0000000</p>
             </div>
 
