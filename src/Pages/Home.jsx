@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 import { FiChevronDown } from "react-icons/fi";
 import Button from "../components/Button";
-import Navbar from "../components/Navbar";
 import CampusNews from "./CampusNews"; // Import the new component
 import Academic from "./Academic";
 import CampusLife from "./CampusLife";
@@ -9,10 +8,19 @@ import UpcomingEvents from "./UpcomingEvents";
 import Admissions from "./Admissions";
 
 const Home = () => {
-  const missionRef = useRef(null);
+  const visionMissionRef = useRef(null);
 
   const handleExploreClick = () => {
-    missionRef.current?.scrollIntoView({ behavior: "smooth" });
+    const target = visionMissionRef.current;
+    if (!target) return;
+
+    const rect = target.getBoundingClientRect();
+    const absoluteTop = window.scrollY + rect.top;
+    const centerOffset = Math.max((window.innerHeight - rect.height) / 2, 0);
+    const maxScrollTop = document.documentElement.scrollHeight - window.innerHeight;
+    const nextTop = Math.min(Math.max(absoluteTop - centerOffset, 0), maxScrollTop);
+
+    window.scrollTo({ top: nextTop, behavior: "smooth" });
   };
 
   return (
@@ -47,8 +55,11 @@ const Home = () => {
       </div>
 
       {/* MISSION SECTION */}
-      <div ref={missionRef} className="relative z-30 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-32">
+      <div className="relative z-30 bg-white">
+        <div
+          ref={visionMissionRef}
+          className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-32"
+        >
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
               A Vision

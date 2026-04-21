@@ -11,6 +11,7 @@ const cards = [
     link: "/campus-life",
     image:
       "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=900&auto=format&fit=crop",
+    featured: true,
   },
   {
     title: "Constructive Dialogue",
@@ -20,6 +21,7 @@ const cards = [
     link: "/campus-life",
     image:
       "https://images.unsplash.com/photo-1558970439-add78fc68990?q=80&w=1620&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    featured: false,
   },
   {
     title: "Recreation & Wellness",
@@ -29,6 +31,7 @@ const cards = [
     linkText: "Recreation & Wellness",
     image:
       "https://www.stanford.edu/wp-content/uploads/2022/04/Campus-life-3.jpg",
+    featured: true,
   },
 ];
 
@@ -36,28 +39,37 @@ const schools = [
   {
     title: "Mathematics",
     link: "/academic/mathematics",
+    featured: true,
   },
   {
     title: "English",
     link: "/academic/english",
+    featured: true,
   },
   {
     title: "Computer Science",
     link: "/academic/computer-science",
+    featured: true,
   },
   {
     title: "BBA Hons",
     link: "/academic/hons",
+    featured: false,
   },
   {
     title: "Short Courses",
     link: "/academic/shortcourse",
+    featured: true,
   },
 ];
 
 const CampusLife = () => {
   const testimonialRef = useRef(null);
   const [isTestimonialVisible, setIsTestimonialVisible] = useState(false);
+  const featuredCards = cards.filter((card) => card.featured);
+  const featuredSchools = schools.filter((school) => school.featured);
+  const displayedCards = featuredCards.length ? featuredCards : cards;
+  const displayedSchools = featuredSchools.length ? featuredSchools : schools;
 
   useEffect(() => {
     const node = testimonialRef.current;
@@ -92,7 +104,7 @@ const CampusLife = () => {
         </header>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12">
-          {cards.map((card) => (
+          {displayedCards.map((card) => (
             <article key={card.title} className="min-w-0">
               <div className="aspect-16/10 overflow-hidden">
                 <img
@@ -123,12 +135,12 @@ const CampusLife = () => {
             Five schools in which to pursue your passions
           </h3>
           <ul className="mt-4 flex flex-wrap justify-center items-center text-base sm:text-lg leading-tight">
-            {schools.map((school, index) => (
+            {displayedSchools.map((school, index) => (
               <li key={school.title} className="text-[#006CB8]">
                 <Link to={school.link} className="hover:underline">
                   {school.title}
                 </Link>
-                {index < schools.length - 1 && (
+                {index < displayedSchools.length - 1 && (
                   <span className="text-black mx-2 sm:mx-3">|</span>
                 )}
               </li>
@@ -138,7 +150,7 @@ const CampusLife = () => {
 
         <div className="flex justify-center mt-12 sm:mt-14">
           <Button
-            to="/academic"
+            to="/campus-life"
             variant="primary"
             size="lg"
             className="text-base sm:text-lg"

@@ -1,4 +1,5 @@
 ﻿import React, { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import Button from "../components/Button";
 
 const cards = [
@@ -7,56 +8,68 @@ const cards = [
     description:
       "Rich learning experiences that provide a broad liberal arts foundation and deep subject-area expertise",
     linkText: "Undergraduate Education",
-    link: "/academic/english",
+    link: "/academic",
     image:
       "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=900&auto=format&fit=crop",
+    featured: true,
   },
   {
     title: "Graduate Education",
     description:
       "Unsurpassed opportunities to participate in the advancement of entire fields of knowledge",
     linkText: "Graduate Education",
-    link: "/academic/english",
+    link: "/academic/hons",
     image:
       "https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=900&auto=format&fit=crop",
+    featured: true,
   },
   {
     title: "Lifelong Learning",
     description:
       "Continuing adult education, executive and professional programs, and programs for K-12 students",
-    link: "/academic/english",
+    link: "/academic/shortcourse",
     linkText: "Lifelong Learning",
     image:
       "https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=900&auto=format&fit=crop",
+    featured: false,
   },
 ];
 
 const schools = [
   {
     title: "Mathematics",
-    link: "/academic/english",
+    link: "/academic/mathematics",
+    featured: true,
   },
   {
     title: "English",
     link: "/academic/english",
+    featured: true,
   },
   {
     title: "Computer Science",
-    link: "/academic/english",
+    link: "/academic/computer-science",
+    featured: true,
   },
   {
     title: "BBA Hons",
-    link: "/academic/english",
+    link: "/academic/hons",
+    featured: true,
   },
   {
     title: "Short Courses",
-    link: "/academic/english",
+    link: "/academic/shortcourse",
+    featured: false,
   },
 ];
 
 const Academic = () => {
   const testimonialRef = useRef(null);
   const [isTestimonialVisible, setIsTestimonialVisible] = useState(false);
+  const featuredCards = cards.filter((card) => card.featured);
+  const featuredSchools = schools.filter((school) => school.featured);
+  const displayedCards = featuredCards.length ? featuredCards : cards;
+  const displayedSchools = featuredSchools.length ? featuredSchools : schools;
 
  useEffect(() => {
   const node = testimonialRef.current;
@@ -91,7 +104,7 @@ const Academic = () => {
         </header>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12">
-          {cards.map((card) => (
+          {displayedCards.map((card) => (
             <article key={card.title} className="min-w-0">
               <div className="aspect-[16/10] overflow-hidden">
                 <img
@@ -107,12 +120,12 @@ const Academic = () => {
               <p className="mt-2 text-gray-700 text-base sm:text-lg leading-relaxed">
                 {card.description}
               </p>
-              <a
-                href={card.link}
+              <Link
+                to={card.link}
                 className="inline-block mt-3 text-base sm:text-lg text-[#006CB8] hover:underline"
               >
                 {card.linkText} &rsaquo;
-              </a>
+              </Link>
             </article>
           ))}
         </div>
@@ -122,12 +135,12 @@ const Academic = () => {
             Five schools in which to pursue your passions
           </h3>
           <ul className="mt-4 flex flex-wrap justify-center items-center text-base sm:text-lg leading-tight">
-            {schools.map((school, index) => (
+            {displayedSchools.map((school, index) => (
               <li key={school.title} className="text-[#006CB8]">
-                <a href={school.link} className="hover:underline">
+                <Link to={school.link} className="hover:underline">
                   {school.title}
-                </a>
-                {index < schools.length - 1 && (
+                </Link>
+                {index < displayedSchools.length - 1 && (
                   <span className="text-black mx-2 sm:mx-3">|</span>
                 )}
               </li>

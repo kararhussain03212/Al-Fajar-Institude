@@ -121,7 +121,7 @@ export const allArticles = [
     authorRole: "Office of Public Affairs",
     authorAvatar: "https://i.pravatar.cc/80?img=15",
     tags: ["Leadership", "Government", "Community", "Development"],
-    featured: false,
+    featured: true,
     body: [
       {
         type: "paragraph",
@@ -170,7 +170,7 @@ export const allArticles = [
     authorRole: "Al-Fajr Institute",
     authorAvatar: "https://i.pravatar.cc/80?img=22",
     tags: ["Research", "Publication", "Faculty", "Academic"],
-    featured: false,
+    featured: true,
     body: [
       {
         type: "paragraph",

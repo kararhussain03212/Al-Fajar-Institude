@@ -1,51 +1,18 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import Button from "../components/Button"; // Adjust path if necessary
+import { Link } from "react-router-dom";
+import Button from "../components/Button";
+import { allArticles } from "../Data";
 
 const CampusNews = () => {
-  const navigate = useNavigate();
-
-  const handleNavigateTo = (path) => {
-    navigate(path);
-  };
-
-  const newsData = [
-    {
-      id: 1,
-      category: "IN THE SPOTLIGHT",
-      title: "Meeting with Assistant Commiss...",
-      image: "/public/news/image.png",
-      size: "large",
-    },
-    {
-      id: 2,
-      category: "Ist International Conference o...",
-      title: "Ist International Conference o...",
-      image: "https://res.cloudinary.com/dh6yabuea/image/upload/v1742320590/Whats_App_Image_2025_03_04_at_4_25_31_PM_1_b7cf08d2b2.jpg",
-      size: "small",
-    },
-    {
-      id: 3,
-      category: "HEALTH & MEDICINE",
-      title: 'World Literacy Day, 2024',
-      image: "https://res.cloudinary.com/dh6yabuea/image/upload/v1726041756/Literacy_day_0ed7c5fb3a.jpg",
-      size: "small",
-    },
-    {
-      id: 4,
-      category: "BUSINESS",
-      title: "Flood Donations",
-      image: "https://res.cloudinary.com/dbf8vcf8o/image/upload/v1682875189/flood_donation_4_627c227f85.jpg",
-      size: "small",
-    },
-    {
-      id: 5,
-      category: "ACADEMICS",
-      title: "In this history class, the final project is a pop song",
-      image: "https://res.cloudinary.com/dbf8vcf8o/image/upload/v1682875189/flood_donation_3_754a4a2ed1.jpg",
-      size: "small",
-    },
-  ];
+  const featuredArticles = allArticles.filter((article) => article.featured);
+  const selectedArticles = (featuredArticles.length ? featuredArticles : allArticles).slice(0, 5);
+  const newsData = selectedArticles.map((article, index) => ({
+    id: article.id,
+    category: article.category,
+    title: article.title,
+    image: article.image,
+    size: index === 0 ? "large" : "small",
+  }));
 
   return (
     <section className="relative z-30 bg-[#f4f4f4] py-12 sm:py-16 md:py-20">
@@ -63,9 +30,9 @@ const CampusNews = () => {
         {/* News Grid - Responsive Bento Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12">
           {newsData.map((news) => (
-            <div
+            <Link
               key={news.id}
-              onClick={() => handleNavigateTo(`/news/${news.id}`)}
+              to={`/news/${news.id}`}
               className={`${
                 news.size === "large" ? "md:col-span-2" : "md:col-span-1"
               } relative group cursor-pointer overflow-hidden bg-white shadow-md hover:shadow-lg transition-all duration-300`}
@@ -91,7 +58,7 @@ const CampusNews = () => {
                   {news.title}
                 </h3>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 

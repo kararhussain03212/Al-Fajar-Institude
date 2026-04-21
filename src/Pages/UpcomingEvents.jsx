@@ -12,7 +12,9 @@ const getEventBadgeDate = (dateText) => {
   };
 };
 
-const events = allEvents.slice(0, 4).map((event) => ({
+const featuredEvents = allEvents.filter((event) => event.featured);
+
+const events = (featuredEvents.length ? featuredEvents : allEvents).slice(0, 4).map((event) => ({
   id: event.id,
   date: getEventBadgeDate(event.date),
   category: event.type,
@@ -25,12 +27,15 @@ const events = allEvents.slice(0, 4).map((event) => ({
 const UpcomingEvents = () => {
   return (
     <section className="relative z-30 bg-[#f4f4f4] py-12 sm:py-16 md:py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 max-w-[1500px]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <header className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3">
             Upcoming Events
           </h2>
+          <p className="text-gray-600 text-base sm:text-lg">
+            Featured events selected by the institute
+          </p>
         </header>
 
         {/* Events Grid */}
@@ -42,14 +47,14 @@ const UpcomingEvents = () => {
               className="bg-white shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden group block"
             >
               {/* Image Container */}
-              <div className="relative aspect-[4/3] overflow-hidden">
+              <div className="relative aspect-4/3 overflow-hidden">
                 <img
                   src={event.image}
                   alt={event.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 {/* Date Badge */}
-                <div className="absolute bottom-0 left-4 bg-[#2d2d2d] text-white px-3 py-2 text-center min-w-[50px]">
+                <div className="absolute bottom-0 left-4 bg-[#2d2d2d] text-white px-3 py-2 text-center min-w-12">
                   <div className="text-xs font-medium uppercase tracking-wide">
                     {event.date.month}
                   </div>
@@ -82,7 +87,7 @@ const UpcomingEvents = () => {
         <div className="flex justify-center">
           <Link
             to="/events"
-            className="inline-block bg-[#8C1515] hover:bg-[#6f1111] text-white text-base sm:text-lg font-semibold px-10 py-3 min-w-[200px] text-center transition-colors duration-300"
+            className="inline-block bg-[#8C1515] hover:bg-[#6f1111] text-white text-base sm:text-lg font-semibold px-10 py-3 text-center transition-colors duration-300"
           >
             More events
           </Link>
