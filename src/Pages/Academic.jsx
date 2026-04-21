@@ -31,7 +31,7 @@ const cards = [
     linkText: "Lifelong Learning",
     image:
       "https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=900&auto=format&fit=crop",
-    featured: false,
+    featured: true,
   },
 ];
 

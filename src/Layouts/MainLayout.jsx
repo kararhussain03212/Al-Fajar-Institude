@@ -10,15 +10,16 @@ import { useSections } from "../hooks/useSections";
 const MainLayout = () => {
   const { pathname } = useLocation();
   const { sections } = useSections("global");
+  const isHomePage = pathname === "/";
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
   return (
-    <>
+      <>
       <Navbar content={sections.navbar} />
-      <main>
+      <main className={isHomePage ? "" : "pt-32"}>
         <Outlet /> {/* This is where page content renders */}
       </main>
       <Footer content={sections.footer} />

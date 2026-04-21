@@ -5,9 +5,9 @@ import { FiMail, FiPhone } from "react-icons/fi";
 
 const facultyMembers = [
   {
-    name: "Jennifer Aarons, PhD",
-    designation: "Assistant Professor",
-    department: "History",
+    name: "Dr. Syed Zulfiqar Zaidi",
+    designation: "Principal",
+    department: "Mathematics",
     image:
       "https://www.alfajr.edu.pk/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdbf8vcf8o%2Fimage%2Fupload%2Fv1683464459%2Fzulfiaq_zaidi_19230059eb.jpg&w=256&q=75",
     email: "jennifer.aarons@alfajr.edu",
@@ -19,11 +19,25 @@ const facultyMembers = [
     },
   },
   {
-    name: "Barry Palatnik, Ed.D",
-    designation: "Associate Professor",
-    department: "History",
+    name: "Tansir Abbas Hashmi",
+    designation: "Coordinator",
+    department: "Mathematics",
     image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=900&auto=format&fit=crop",
+      "https://www.alfajr.edu.pk/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdbf8vcf8o%2Fimage%2Fupload%2Fv1683473327%2Ftansir_abbas_608906cb94.png&w=256&q=75",
+    email: "nancy.steppin@alfajr.edu",
+    phone: "+1 2245 1247 241",
+    social: {
+      facebook: "https://www.facebook.com/AlFajarInstitute/",
+      linkedin: "https://linkedin.com/school/alfajrinstitute",
+      instagram: "https://instagram.com/alfajrinstitute",
+    },
+  },
+  {
+    name: "Muhammad Irfan",
+    designation: "Lecturer",
+    department: "Business Administration",
+    image:
+      "https://www.alfajr.edu.pk/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdbf8vcf8o%2Fimage%2Fupload%2Fv1683457818%2Fmuhammad_irfan_2ac5883159.png&w=256&q=75",
     email: "barry.palatnik@alfajr.edu",
     phone: "+1 2245 1247 241",
     social: {
@@ -33,11 +47,11 @@ const facultyMembers = [
     },
   },
   {
-    name: "Marc Robinson, MBA",
-    designation: "Teaching Specialist",
-    department: "Accounting",
+    name: "Muhammad Burair Hussain",
+    designation: "Lecturer",
+    department: "physics",
     image:
-      "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=900&auto=format&fit=crop",
+      "https://www.alfajr.edu.pk/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdbf8vcf8o%2Fimage%2Fupload%2Fv1683401816%2Fburair_hussain_990d409d1e.png&w=256&q=75",
     email: "marc.robinson@alfajr.edu",
     phone: "+1 2245 1247 241",
     social: {
@@ -47,11 +61,11 @@ const facultyMembers = [
     },
   },
   {
-    name: "Nancy Steppin, DBA",
-    designation: "Assistant Professor",
-    department: "Finance",
+    name: "Noor hassan",
+    designation: "Lecturer",
+    department: "Mathematics",
     image:
-      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=900&auto=format&fit=crop",
+      "https://www.alfajr.edu.pk/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdbf8vcf8o%2Fimage%2Fupload%2Fv1707801171%2FWhats_App_Image_2024_02_01_at_09_56_03_58d30d34d1.jpg&w=256&q=75",
     email: "nancy.steppin@alfajr.edu",
     phone: "+1 2245 1247 241",
     social: {
@@ -60,6 +74,35 @@ const facultyMembers = [
       instagram: "https://instagram.com/alfajrinstitute",
     },
   },
+  {
+    name: "Ammara Gul",
+    designation: "Lecturer",
+    department: "English",
+    image:
+      "https://www.alfajr.edu.pk/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdbf8vcf8o%2Fimage%2Fupload%2Fv1683464755%2FAmmara_Gul_30d1103522.png&w=256&q=75",
+    email: "nancy.steppin@alfajr.edu",
+    phone: "+1 2245 1247 241",
+    social: {
+      facebook: "https://www.facebook.com/AlFajarInstitute/",
+      linkedin: "https://linkedin.com/school/alfajrinstitute",
+      instagram: "https://instagram.com/alfajrinstitute",
+    },
+  },
+  {
+    name: "Obed Ullah Khan",
+    designation: "Lecturer",
+    department: "English",
+    image:
+      "https://www.alfajr.edu.pk/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdbf8vcf8o%2Fimage%2Fupload%2Fv1707800365%2FWhats_App_Image_2024_01_30_at_14_36_48_1_49612e9ac5.jpg&w=256&q=75",
+    email: "nancy.steppin@alfajr.edu",
+    phone: "+1 2245 1247 241",
+    social: {
+      facebook: "https://www.facebook.com/AlFajarInstitute/",
+      linkedin: "https://linkedin.com/school/alfajrinstitute",
+      instagram: "https://instagram.com/alfajrinstitute",
+    },
+  },
+  
 ];
 
 const Faculty = () => {

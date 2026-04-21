@@ -57,11 +57,7 @@ const Navbar = ({ transparentOnHero = false }) => {
 
   return (
     <header
-      className={`w-full z-50 ${
-        shouldUseHeroTransparency
-          ? "fixed top-0 left-0 right-0"
-          : "relative"
-      }`}
+      className="fixed top-0 left-0 right-0 w-full z-50"
     >
       <div
         className={`text-white transition-colors duration-300 ${

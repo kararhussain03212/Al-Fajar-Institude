@@ -207,6 +207,7 @@ export const allArticles = [
     authorRole: "Al-Fajr Institute",
     authorAvatar: "https://i.pravatar.cc/80?img=30",
     tags: ["Admissions", "Fall 2024", "Scholarships", "Undergraduate"],
+    featured: true,
     body: [
       {
         type: "paragraph",
@@ -258,6 +259,7 @@ export const allArticles = [
     authorRole: "Al-Fajr Institute",
     authorAvatar: "https://i.pravatar.cc/80?img=33",
     tags: ["Independence Day", "Pakistan", "Patriotism", "Events"],
+    featured: true,
     body: [
       {
         type: "paragraph",
@@ -300,6 +302,7 @@ export const allArticles = [
     authorRole: "Al-Fajr Institute",
     authorAvatar: "https://i.pravatar.cc/80?img=40",
     tags: ["Sports", "Cricket", "Football", "Athletics"],
+    featured: true,
     body: [
       {
         type: "paragraph",
@@ -664,7 +667,7 @@ export const allEvents = [
     tags: ["Students", "Writing", "Awards"],
     audience: ["Students", "Faculty", "Staff"],
     website: "#",
-    featured: false,
+    featured: true,
   },
   {
     id: 5,
