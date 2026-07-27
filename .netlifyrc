@@ -1,0 +1,15 @@
+# Netlify CLI Configuration
+# For more info: https://cli.netlify.com/
+
+[context.production]
+  command = "npm run build"
+  publish = "dist"
+  edge_functions = "netlify/edge-functions"
+
+[context.deploy-preview]
+  command = "npm run build"
+  publish = "dist"
+
+[context.branch-deploy]
+  command = "npm run build"
+  publish = "dist"

@@ -1,6 +1,8 @@
 # Deployment Guide - Netlify
 
-This project is configured for deployment on Netlify's free tier.
+This project is deployed on Netlify's free tier.
+
+**Live Site:** https://al-fajr-institude.netlify.app
 
 ## Prerequisites
 
@@ -91,14 +93,25 @@ If you need to add environment variables:
 - Check React Router paths match exactly
 - Clear browser cache (Ctrl+Shift+Delete)
 
-## Domain Setup
+## Current Domain
 
-To connect a custom domain:
+**Free Netlify Subdomain:** https://al-fajr-institude.netlify.app
 
-1. Go to Site settings → Domain management
-2. Add your custom domain
-3. Follow DNS configuration instructions
-4. SSL certificate is automatic (Let's Encrypt)
+This domain is automatically managed by Netlify and includes:
+- Free SSL/HTTPS certificate
+- Global CDN
+- Automatic renewals
+- No additional setup required
+
+## Domain Setup (Future)
+
+To connect a custom domain later:
+
+1. Register a domain (e.g., alfajrinstitute.com, alfajrinstitute.pk)
+2. Go to Site settings → Domain management in Netlify
+3. Add your custom domain
+4. Update DNS records at your domain registrar
+5. SSL certificate is automatic (Let's Encrypt)
 
 ## Performance Tips
 
