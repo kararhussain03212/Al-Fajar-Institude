@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import { Link } from "react-router-dom";
 
 const admissionPaths = [
@@ -42,7 +42,7 @@ const Admissions = () => {
           {admissionPaths.map((path) => (
             <div
               key={path.title}
-              className="border-t-4 border-[#8C1515] bg-[#f4f4f4] p-6 sm:p-8 hover:shadow-lg transition-shadow duration-300"
+              className="border-t-4 border-[var(--theme-primary)] bg-[var(--theme-surface-soft)] p-6 sm:p-8 hover:shadow-lg transition-shadow duration-300"
             >
               <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">
                 {path.title}
@@ -52,7 +52,7 @@ const Admissions = () => {
               </p>
               <Link
                 to={path.link}
-                className="inline-block text-[#006CB8] hover:text-[#8C1515] font-semibold text-base hover:underline transition-colors duration-300"
+                className="inline-block text-[var(--theme-accent)] hover:text-[var(--theme-primary)] font-semibold text-base hover:underline transition-colors duration-300"
               >
                 {path.linkText} &rsaquo;
               </Link>
@@ -68,7 +68,7 @@ const Admissions = () => {
           </p>
           <Link
             to="/admissions/detail"
-            className="inline-block bg-[#8C1515] hover:bg-[#6f1111] text-white text-base sm:text-lg font-semibold px-10 py-4 min-w-[200px] text-center transition-colors duration-300 shadow-md hover:shadow-lg"
+            className="inline-block bg-[var(--theme-primary)] hover:bg-[var(--theme-primary-dark)] text-white text-base sm:text-lg font-semibold px-10 py-4 min-w-[200px] text-center transition-colors duration-300 shadow-md hover:shadow-lg"
           >
             Start Your Application
           </Link>
@@ -79,3 +79,4 @@ const Admissions = () => {
 };
 
 export default Admissions;
+

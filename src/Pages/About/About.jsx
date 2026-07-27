@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import WhoWeAre from "./WhoWeAre";
 
 const About = () => {
@@ -10,3 +10,4 @@ const About = () => {
 };
 
 export default About;
+

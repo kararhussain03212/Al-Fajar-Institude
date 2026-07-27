@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 
 const overview = [
   ["Duration", "The duration required to complete this degree is 4 years."],
@@ -153,7 +153,7 @@ const electivesC = [
 
 const tableWrapperClass = "overflow-x-auto border border-gray-300 bg-white";
 const thClass =
-  "border border-gray-300 bg-[#8C1515] px-3 py-2 text-left text-sm font-semibold text-white";
+  "border border-gray-300 bg-[var(--theme-primary)] px-3 py-2 text-left text-sm font-semibold text-white";
 const tdClass = "border border-gray-300 px-3 py-2 text-sm text-gray-800";
 
 const CourseTable = ({ rows }) => (
@@ -200,7 +200,7 @@ const Mathematics = () => {
                 <tbody>
                   {overview.map((item) => (
                     <tr key={item[0]}>
-                      <td className="border border-gray-300 bg-gray-50 px-3 py-2 text-sm font-semibold text-gray-900 sm:w-72">
+                      <td className="border border-gray-300 bg-[var(--theme-surface-soft)] px-3 py-2 text-sm font-semibold text-gray-900 sm:w-72">
                         {item[0]}
                       </td>
                       <td className="border border-gray-300 px-3 py-2 text-sm text-gray-800">
@@ -227,7 +227,7 @@ const Mathematics = () => {
               ))}
             </div>
 
-            <div className="mt-10 space-y-3 rounded border border-[#8C1515]/25 bg-[#8C1515]/5 p-4 text-sm text-gray-700">
+            <div className="mt-10 space-y-3 rounded border border-[var(--theme-primary)]/25 bg-[var(--theme-primary)]/5 p-4 text-sm text-gray-700">
               <p>Total Number of Credit Hours = 128.</p>
               <p>
                 * These four courses are optional and can be selected either
@@ -292,3 +292,5 @@ const Mathematics = () => {
 };
 
 export default Mathematics;
+
+

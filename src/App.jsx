@@ -1,4 +1,4 @@
-// src/App.jsx
+﻿// src/App.jsx
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MainLayout from "./Layouts/MainLayout";
 
@@ -86,3 +86,4 @@ function App() {
 }
 
 export default App;
+

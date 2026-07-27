@@ -4,15 +4,14 @@ import { Link } from "react-router-dom";
 const WhoWeAre = () => {
   const excellenceSections = [
     {
-      title: "Chairman Message",
+      title: "Vice Chancellor",
       description: `At Al-Fajr International Institute of Higher Studies, we believe that higher education is the cornerstone of societal progress, driving innovation, economic growth, and social advancement. Our vision is to create a platform where talented youth from all backgrounds can access quality education without the burden of financial constraints, empowering them to reach their full potential.\n
 We aim to produce well-educated, responsible, and skilled individuals who will lead Pakistan towards a brighter and better future. Through a commitment to academic excellence and community development, we are determined to shape a generation that is sincere, capable, and dedicated to making meaningful contributions to society. Together, we will build a prosperous nation with citizens who uphold values of integrity, knowledge, and responsibility.\n
 Thank you for being a part of this journey.\n 
 Warm regards,`,
       buttonText: "Learn more",
       buttonLink: "/about/chairman-message",
-      image:
-        "https://www.alfajr.edu.pk/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdh6yabuea%2Fimage%2Fupload%2Fv1726332539%2Fpic_1a71125a4a.jpg&w=1920&q=75",
+      image: "/staff/image-2.png",
       imageAlt: "Students collaborating at Al Fajr Institute",
     },
     {
@@ -30,11 +29,11 @@ Sincerely,`,
   ];
 
   return (
-    <section className="bg-white  pb-12 sm:pb-16 md:pb-20">
+    <section className="bg-[var(--theme-surface)] pb-12 sm:pb-16 md:pb-20">
       <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-400">
         {/* Heading */}
         <div className="text-center mb-10 sm:mb-16 md:mb-20">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 my-10 sm:my-12 md:my-15">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--theme-primary)] py-10 sm:py-12 md:py-15">
             Who We Are
           </h1>
 
@@ -48,12 +47,12 @@ Sincerely,`,
           </div>
 
           {/* Paragraph */}
-          <p className="text-gray-700 text-justify text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-5xl mx-auto">
+          <p className="text-[var(--theme-text)] text-justify text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-5xl mx-auto">
             Higher education is crucial for societal development, driving
             innovation, economic growth, and social progress. Unfortunately,
             many talented students in Pakistan are unable to pursue higher
             education due to financial constraints, hindering their personal
-            growth and the country’s overall development.
+            growth and the country�s overall development.
             <br />
             <br />
             The Mianwali district of Pakistan, has a population of approximately
@@ -81,15 +80,15 @@ Sincerely,`,
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-0 items-center">
               {/* Text */}
               <div
-                className={`bg-[#f5f5f5] p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col justify-center ${
+                className={`bg-[var(--theme-surface-soft)] p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col justify-center ${
                   isSwapped ? "lg:order-2" : "lg:order-1"
                 }`}
               >
-                <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 mb-4">
+                <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-[var(--theme-primary)] mb-4">
                   {section.title}
                 </h3>
 
-                <p className="text-gray-800 text-sm sm:text-base md:text-lg mb-6 whitespace-pre-line leading-relaxed">
+                <p className="text-[var(--theme-text)] text-sm sm:text-base md:text-lg mb-6 whitespace-pre-line leading-relaxed">
                   {section.description}
                 </p>
 
@@ -98,7 +97,7 @@ Sincerely,`,
                   {/*
                   <Link
                     to={section.buttonLink}
-                    className="inline-block bg-[#8C1515] hover:bg-[#6f1111] text-white text-sm sm:text-base font-semibold px-6 sm:px-8 py-3 w-full sm:w-auto sm:min-w-[280px] text-center transition-colors duration-300"
+                    className="inline-block bg-[var(--theme-primary)] hover:bg-[var(--theme-primary-dark)] text-white text-sm sm:text-base font-semibold px-6 sm:px-8 py-3 w-full sm:w-auto sm:min-w-[280px] text-center transition-colors duration-300"
                   >
                     {section.buttonText}
                   </Link>
@@ -127,3 +126,4 @@ Sincerely,`,
 };
 
 export default WhoWeAre;
+

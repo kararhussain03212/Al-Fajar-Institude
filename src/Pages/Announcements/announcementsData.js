@@ -1,4 +1,4 @@
-export const allAnnouncements = [
+﻿export const allAnnouncements = [
     {
         id: 1,
         category: "Admissions",
@@ -170,3 +170,4 @@ export const allAnnouncements = [
         ],
     },
 ];
+

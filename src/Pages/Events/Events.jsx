@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import { Link } from "react-router-dom";
 import { allEvents } from "../../Data";
 
@@ -9,14 +9,14 @@ const Events = () => {
   const displayEvents = [...featuredEvents, ...otherEvents];
 
   return (
-    <section className="min-h-screen bg-[#ececec] text-gray-900">
+    <section className="min-h-screen bg-[var(--theme-surface-soft)] text-gray-900">
       {/* Top banner */}
       
 
       {/* Header */}
       <div className="bg-white border-b border-gray-300">
         <div className="max-w-[1200px] mx-auto px-4 py-6">
-          <h1 className="text-3xl sm:text-4xl font-bold text-[#8C1515]">
+          <h1 className="text-3xl sm:text-4xl font-bold text-[var(--theme-primary)]">
             Al-Fajr | Events Calendar
           </h1>
           <p className="text-gray-600 mt-2">
@@ -45,16 +45,16 @@ const Events = () => {
                   className="w-full h-40 md:h-full object-cover"
                 />
                 <div className="p-4 md:p-5">
-                  <p className="text-xs font-bold uppercase text-[#8C1515]">
+                  <p className="text-xs font-bold uppercase text-[var(--theme-primary)]">
                     {event.type}
                   </p>
                   <h3 className="text-2xl font-bold mt-1">{event.title}</h3>
                   <p className="text-sm text-gray-600 mt-2">
                     {event.date} | {event.time}
                   </p>
-                  <p className="text-sm text-[#1f4b8f] mt-1">{event.location}</p>
+                  <p className="text-sm text-[var(--theme-navy)] mt-1">{event.location}</p>
                   <p className="text-gray-700 mt-3">{event.summary}</p>
-                  <span className="inline-block mt-3 text-[#1f4b8f] font-semibold">
+                  <span className="inline-block mt-3 text-[var(--theme-navy)] font-semibold">
                     View event &rsaquo;
                   </span>
                 </div>
@@ -68,4 +68,6 @@ const Events = () => {
 };
 
 export default Events;
+
+
 

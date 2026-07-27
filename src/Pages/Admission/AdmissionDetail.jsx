@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import { Link } from "react-router-dom";
 import { FiArrowRight, FiCheck } from "react-icons/fi";
 
@@ -76,7 +76,7 @@ const programCategories = [
 ];
 
 const inputClassName =
-  "w-full border border-gray-200 rounded-none px-4 py-3 text-sm text-gray-800 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#8C1515]/30 focus:border-[#8C1515]";
+  "w-full border border-gray-200 rounded-none px-4 py-3 text-sm text-gray-800 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[var(--theme-primary)]/30 focus:border-[var(--theme-primary)]";
 
 const AdmissionDetail = () => {
   const uniqueRequirements = requirements.reduce(
@@ -108,10 +108,10 @@ const AdmissionDetail = () => {
   );
 
   return (
-    <div className="bg-[#f5f5f5] text-gray-900 ">
+    <div className="bg-[var(--theme-surface)] text-gray-900 ">
       <section className="relative h-75 sm:h-90 overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=2000&auto=format&fit=crop"
+          src="/home/institude.webp"
           alt="Campus lawn and academic buildings"
           className="absolute inset-0 h-full w-full object-cover"
         />
@@ -164,7 +164,7 @@ const AdmissionDetail = () => {
         <div className="mt-10 space-y-10">
           {programCategories.map((category) => (
             <section key={category.title}>
-              <h4 className="text-2xl gap-2  text-white bg-[#8c1515] py-1 text-center">
+              <h4 className="text-2xl gap-2  text-white bg-[var(--theme-primary)] py-1 text-center">
                 {category.title}
               </h4>
 
@@ -180,7 +180,7 @@ const AdmissionDetail = () => {
                     </p>
                     <Link
                       to={item.to}
-                      className="mt-4 inline-flex items-center gap-2 text-base font-semibold text-[#006CB8] hover:text-[#8C1515] hover:underline"
+                      className="mt-4 inline-flex items-center gap-2 text-base font-semibold text-[var(--theme-accent)] hover:text-[var(--theme-primary)] hover:underline"
                     >
                       View Program <FiArrowRight className="text-sm" />
                     </Link>
@@ -195,7 +195,7 @@ const AdmissionDetail = () => {
         <div className="mt-6 overflow-x-auto border border-gray-200 bg-white">
           <table className="min-w-full border-collapse text-sm">
             <thead>
-              <tr className="bg-[#8C1515] text-white">
+              <tr className="bg-[var(--theme-primary)] text-white">
                 <th className="px-4 py-3 text-left font-semibold">Event</th>
                 <th className="px-4 py-3 text-left font-semibold">Restrictive Early Action</th>
                 <th className="px-4 py-3 text-left font-semibold">Regular Decision</th>
@@ -291,7 +291,7 @@ const AdmissionDetail = () => {
                   <label className="text-sm text-gray-700">Application Submission:</label>
                   <input
                     type="file"
-                    className="block w-full text-sm text-gray-600 file:mr-4 file:border-0 file:bg-[#8C1515] file:px-4 file:py-2 file:text-white hover:file:bg-[#6f1111] sm:w-auto"
+                    className="block w-full text-sm text-gray-600 file:mr-4 file:border-0 file:bg-[var(--theme-primary)] file:px-4 file:py-2 file:text-white hover:file:bg-[var(--theme-primary-dark)] sm:w-auto"
                   />
                 </div>
 
@@ -304,7 +304,7 @@ const AdmissionDetail = () => {
 
                 <button
                   type="submit"
-                  className="mt-6 inline-flex items-center gap-2 bg-[#8C1515] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#6f1111]"
+                  className="mt-6 inline-flex items-center gap-2 bg-[var(--theme-primary)] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[var(--theme-primary-dark)]"
                 >
                   Submit Application <FiArrowRight />
                 </button>
@@ -326,7 +326,7 @@ const AdmissionDetail = () => {
                         <li key={item.label} className="border-t border-gray-200">
                           <Link
                             to={item.to}
-                            className="flex items-center justify-between px-5 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#8C1515]"
+                            className="flex items-center justify-between px-5 py-3 text-sm text-gray-700 hover:bg-[var(--theme-surface-soft)] hover:text-[var(--theme-primary)]"
                           >
                             <span>{item.label}</span>
                             <FiArrowRight className="text-gray-400" />
@@ -339,7 +339,7 @@ const AdmissionDetail = () => {
               </div>
             </div>
 
-            <div className="bg-[#8C1515] p-5 text-white">
+            <div className="bg-[var(--theme-primary)] p-5 text-white">
               <h4 className="text-xl font-semibold">Department Contact Info</h4>
               <p className="mt-5 text-sm text-white/90">Contact:</p>
               <p className="text-sm">info@ssdo.org.pk</p>
@@ -355,3 +355,5 @@ const AdmissionDetail = () => {
 };
 
 export default AdmissionDetail;
+
+

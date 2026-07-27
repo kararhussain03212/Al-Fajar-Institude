@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import { Link } from "react-router-dom";
 import { 
   FaFacebookF, 
@@ -12,11 +12,9 @@ const footerLinks = {
   admissions: {
     title: "Admissions",
     links: [
-      { name: "Undergraduate", href: "/admissions/undergraduate" },
-      { name: "Graduate", href: "/admissions/graduate" },
-      { name: "Professional Education", href: "/admissions/professional" },
-      { name: "Financial Aid", href: "/downloads" },
-      { name: "Visit Campus", href: "/contact-us" },
+      { name: "Undergraduate", href: "/admissions/detail" },
+      { name: "Graduate", href: "/admissions/detail" },
+      { name: "Short Courses", href: "/admissions/detail" },
     ],
   },
   academics: {
@@ -24,9 +22,9 @@ const footerLinks = {
     links: [
       { name: "Schools & Departments", href: "/academic" },
       { name: "Programs & Courses", href: "/academic" },
-      { name: "Research", href: "/conference" },
-      { name: "Libraries", href: "/downloads" },
-      { name: "Online Learning", href: "/academic/shortcourse" },
+      { name: "Research", href: "/academic" },
+      { name: "Libraries", href: "/academic" },
+      { name: "Online Learning", href: "/academic" },
     ],
   },
   campusLife: {
@@ -35,8 +33,8 @@ const footerLinks = {
       { name: "Housing & Dining", href: "/campus-life" },
       { name: "Student Organizations", href: "/campus-life" },
       { name: "Health & Wellness", href: "/campus-life" },
-      { name: "Athletics", href: "/events" },
-      { name: "Events Calendar", href: "/events" },
+      { name: "Athletics", href: "/campus-life" },
+      { name: "Events Calendar", href: "/campus-life" },
     ],
   },
   about: {
@@ -98,7 +96,7 @@ const Footer = () => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-700 text-gray-400 hover:bg-[#8C1515] hover:text-white transition-all duration-300"
+                    className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-700 text-gray-400 hover:bg-[var(--theme-primary)] hover:text-white transition-all duration-300"
                     aria-label={social.name}
                   >
                     <IconComponent className="w-4 h-4" />
@@ -151,11 +149,11 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-gray-700 bg-[#8C1515]">
+      <div className="border-t border-gray-700 bg-[var(--theme-primary)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0 text-xs text-white">
             <div className="flex flex-wrap justify-center md:justify-start space-x-4">
-              <span>&copy; {new Date().getFullYear()} Al Fajr Institute. All rights reserved.</span>
+              <span>&copy; {new Date().getFullYear()} Al Fajr Institute. All rights reserved SWIFT SIGN IT</span>
             </div>
             <div className="flex flex-wrap justify-center md:justify-end space-x-4">
               <Link to="/downloads" className="hover:text-gray-300 transition-colors">
@@ -179,3 +177,4 @@ const Footer = () => {
 };
 
 export default Footer;
+

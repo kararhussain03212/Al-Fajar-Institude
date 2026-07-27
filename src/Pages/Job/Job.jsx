@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+﻿import React, { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   FiArrowRight,
@@ -70,14 +70,14 @@ const Job = () => {
   };
 
   return (
-    <section className="bg-[#f5f5f5] pb-14">
+    <section className="bg-[var(--theme-surface)] pb-14">
       <div className="relative h-75 overflow-hidden sm:h-90">
         <img
           src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2000&auto=format&fit=crop"
           alt="Career opportunities at Al Fajr Institute"
           className="absolute inset-0 h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-linear-to-r from-[#0b1324]/80 to-[#8C1515]/70" />
+        <div className="absolute inset-0 bg-linear-to-r from-[#0b1324]/80 to-[var(--theme-primary)]/70" />
 
         <div className="relative mx-auto flex h-full max-w-6xl flex-col justify-center px-4 text-white sm:px-6">
           <p className="text-sm uppercase tracking-widest text-white/85">Careers at Al Fajr Institute</p>
@@ -103,14 +103,14 @@ const Job = () => {
                 value={query}
                 onChange={(event) => setQuery(event.target.value)}
                 placeholder="Search jobs"
-                className="h-11 w-full border border-gray-300 pl-10 pr-3 text-sm text-gray-800 outline-none focus:border-[#8C1515]"
+                className="h-11 w-full border border-gray-300 pl-10 pr-3 text-sm text-gray-800 outline-none focus:border-[var(--theme-primary)]"
               />
             </label>
 
             <select
               value={department}
               onChange={(event) => setDepartment(event.target.value)}
-              className="h-11 w-full border border-gray-300 px-3 text-sm text-gray-800 outline-none focus:border-[#8C1515]"
+              className="h-11 w-full border border-gray-300 px-3 text-sm text-gray-800 outline-none focus:border-[var(--theme-primary)]"
             >
               {departments.map((option) => (
                 <option key={option} value={option}>
@@ -122,7 +122,7 @@ const Job = () => {
             <select
               value={jobType}
               onChange={(event) => setJobType(event.target.value)}
-              className="h-11 w-full border border-gray-300 px-3 text-sm text-gray-800 outline-none focus:border-[#8C1515]"
+              className="h-11 w-full border border-gray-300 px-3 text-sm text-gray-800 outline-none focus:border-[var(--theme-primary)]"
             >
               {jobTypes.map((option) => (
                 <option key={option} value={option}>
@@ -134,7 +134,7 @@ const Job = () => {
             <select
               value={location}
               onChange={(event) => setLocation(event.target.value)}
-              className="h-11 w-full border border-gray-300 px-3 text-sm text-gray-800 outline-none focus:border-[#8C1515]"
+              className="h-11 w-full border border-gray-300 px-3 text-sm text-gray-800 outline-none focus:border-[var(--theme-primary)]"
             >
               {locations.map((option) => (
                 <option key={option} value={option}>
@@ -147,7 +147,7 @@ const Job = () => {
           {hasFilters && (
             <button
               onClick={resetFilters}
-              className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#8C1515] hover:text-[#6f1111]"
+              className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[var(--theme-primary)] hover:text-[var(--theme-primary-dark)]"
             >
               <FiX />
               Clear filters
@@ -169,10 +169,10 @@ const Job = () => {
 
               <div className="p-5 sm:p-6">
                 <div className="flex flex-wrap items-center gap-2 text-xs">
-                  <span className="bg-[#8C1515]/10 px-2 py-1 font-semibold text-[#8C1515]">
+                  <span className="bg-[var(--theme-primary)]/10 px-2 py-1 font-semibold text-[var(--theme-primary)]">
                     {job.type}
                   </span>
-                  <span className="bg-[#0f4c81]/10 px-2 py-1 font-semibold text-[#0f4c81]">
+                  <span className="bg-[var(--theme-navy)]/10 px-2 py-1 font-semibold text-[var(--theme-navy)]">
                     {job.workplace}
                   </span>
                 </div>
@@ -182,19 +182,19 @@ const Job = () => {
 
                 <div className="mt-4 grid grid-cols-1 gap-2 text-sm text-gray-700 sm:grid-cols-2 lg:grid-cols-4">
                   <p className="inline-flex items-center gap-2">
-                    <FiBriefcase className="text-[#8C1515]" />
+                    <FiBriefcase className="text-[var(--theme-primary)]" />
                     {job.department}
                   </p>
                   <p className="inline-flex items-center gap-2">
-                    <FiMapPin className="text-[#8C1515]" />
+                    <FiMapPin className="text-[var(--theme-primary)]" />
                     {job.location}
                   </p>
                   <p className="inline-flex items-center gap-2">
-                    <FiClock className="text-[#8C1515]" />
+                    <FiClock className="text-[var(--theme-primary)]" />
                     Deadline: {formatDate(job.deadline)}
                   </p>
                   <p className="inline-flex items-center gap-2">
-                    <FiUsers className="text-[#8C1515]" />
+                    <FiUsers className="text-[var(--theme-primary)]" />
                     {job.openings} Openings
                   </p>
                 </div>
@@ -202,7 +202,7 @@ const Job = () => {
                 <div className="mt-5 flex flex-wrap gap-3">
                   <Link
                     to={`/job/${job.id}`}
-                    className="inline-flex items-center gap-2 bg-[#8C1515] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#6f1111]"
+                    className="inline-flex items-center gap-2 bg-[var(--theme-primary)] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[var(--theme-primary-dark)]"
                   >
                     View Details <FiArrowRight />
                   </Link>
@@ -210,7 +210,7 @@ const Job = () => {
                     href={`mailto:info@ssdo.org.pk?subject=Application for ${encodeURIComponent(
                       job.title
                     )}`}
-                    className="inline-flex items-center gap-2 border border-[#8C1515] px-5 py-2.5 text-sm font-semibold text-[#8C1515] hover:bg-[#8C1515] hover:text-white"
+                    className="inline-flex items-center gap-2 border border-[var(--theme-primary)] px-5 py-2.5 text-sm font-semibold text-[var(--theme-primary)] hover:bg-[var(--theme-primary)] hover:text-white"
                   >
                     Apply by Email
                   </a>
@@ -228,7 +228,7 @@ const Job = () => {
             </p>
             <button
               onClick={resetFilters}
-              className="mt-5 bg-[#8C1515] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#6f1111]"
+              className="mt-5 bg-[var(--theme-primary)] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[var(--theme-primary-dark)]"
             >
               Reset Filters
             </button>
@@ -240,3 +240,4 @@ const Job = () => {
 };
 
 export default Job;
+

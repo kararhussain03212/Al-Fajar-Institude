@@ -1,4 +1,4 @@
-// components/Button.jsx
+﻿// components/Button.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -18,9 +18,9 @@ const Button = ({
   
   // Variant styles
   const variants = {
-    primary: 'bg-[#8C1515] text-white hover:bg-[#6F1111] hover:shadow-lg', // Stanford red
-    secondary: 'bg-white text-[#8C1515] border-2 border-[#8C1515] hover:bg-[#8C1515] hover:text-white',
-    outline: 'bg-transparent text-[#8C1515] border-2 border-[#8C1515] hover:bg-[#8C1515] hover:text-white',
+    primary: 'bg-[var(--theme-primary)] text-white hover:bg-[var(--theme-primary-dark)] hover:shadow-lg',
+    secondary: 'bg-white text-[var(--theme-primary)] border-2 border-[var(--theme-primary)] hover:bg-[var(--theme-primary)] hover:text-white',
+    outline: 'bg-transparent text-[var(--theme-primary)] border-2 border-[var(--theme-primary)] hover:bg-[var(--theme-primary)] hover:text-white',
   };
   
   // Size styles
@@ -63,3 +63,4 @@ const Button = ({
 };
 
 export default Button;
+

@@ -1,4 +1,4 @@
-export const jobsData = [
+﻿export const jobsData = [
   {
     id: "assistant-professor-cs",
     title: "Assistant Professor - Computer Science",
@@ -199,3 +199,4 @@ export const jobsData = [
     ],
   },
 ];
+

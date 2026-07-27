@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 
 const overview = [
   ["Track", "Short Courses"],
@@ -28,7 +28,7 @@ const highlights = [
 ];
 
 const thClass =
-  "border border-gray-300 bg-[#8C1515] px-3 py-2 text-left text-sm font-semibold text-white";
+  "border border-gray-300 bg-[var(--theme-primary)] px-3 py-2 text-left text-sm font-semibold text-white";
 const tdClass = "border border-gray-300 px-3 py-2 text-sm text-gray-800";
 
 const ShortCourse = () => {
@@ -52,7 +52,7 @@ const ShortCourse = () => {
                 <tbody>
                   {overview.map((item) => (
                     <tr key={item[0]}>
-                      <td className="border border-gray-300 bg-gray-50 px-3 py-2 text-sm font-semibold text-gray-900 sm:w-72">
+                      <td className="border border-gray-300 bg-[var(--theme-surface-soft)] px-3 py-2 text-sm font-semibold text-gray-900 sm:w-72">
                         {item[0]}
                       </td>
                       <td className="border border-gray-300 px-3 py-2 text-sm text-gray-800">
@@ -96,7 +96,7 @@ const ShortCourse = () => {
             <ul className="mt-4 space-y-2 text-sm text-gray-700">
               {highlights.map((item) => (
                 <li key={item} className="flex items-start gap-2">
-                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[#8C1515]" />
+                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[var(--theme-primary)]" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -109,3 +109,5 @@ const ShortCourse = () => {
 };
 
 export default ShortCourse;
+
+

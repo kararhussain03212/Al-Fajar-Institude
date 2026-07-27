@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import { Link } from "react-router-dom";
 import Button from "../components/Button";
 import { allArticles } from "../Data";
@@ -15,7 +15,7 @@ const CampusNews = () => {
   }));
 
   return (
-    <section className="relative z-30 bg-[#f4f4f4] py-12 sm:py-16 md:py-20">
+    <section className="relative z-30 bg-[var(--theme-surface-soft)] py-12 sm:py-16 md:py-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 max-w-[1500px]">
         {/* Section Header */}
         <div className="text-center mb-8 sm:mb-12">
@@ -51,7 +51,7 @@ const CampusNews = () => {
 
               {/* Text Content */}
               <div className={news.size === "large" ? "absolute bottom-0 left-0 right-0 p-4 sm:p-6" : "p-4"}>
-                <span className={`text-xs font-semibold uppercase tracking-wider ${news.size === "large" ? "text-gray-300" : "text-[#8C1515]"}`}>
+                <span className={`text-xs font-semibold uppercase tracking-wider ${news.size === "large" ? "text-gray-300" : "text-[var(--theme-primary)]"}`}>
                   {news.category}
                 </span>
                 <h3 className={`font-bold mt-1 leading-tight ${news.size === "large" ? "text-white text-lg sm:text-xl" : "text-gray-900 text-sm sm:text-base"}`}>
@@ -74,3 +74,5 @@ const CampusNews = () => {
 };
 
 export default CampusNews;
+
+

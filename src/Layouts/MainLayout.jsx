@@ -1,4 +1,4 @@
-// src/layouts/MainLayout.jsx
+﻿// src/layouts/MainLayout.jsx
 import { Outlet, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Navbar from "../components/Navbar";
@@ -30,3 +30,4 @@ const MainLayout = () => {
 };
 
 export default MainLayout;
+

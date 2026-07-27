@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 
 const details = [
   ["Duration", "The duration required to complete this degree is 4 years."],
@@ -31,7 +31,7 @@ const BAHons = () => {
                 <tbody>
                   {details.map((item) => (
                     <tr key={item[0]}>
-                      <td className="border border-gray-300 bg-gray-50 px-3 py-2 text-sm font-semibold text-gray-900 sm:w-72">
+                      <td className="border border-gray-300 bg-[var(--theme-surface-soft)] px-3 py-2 text-sm font-semibold text-gray-900 sm:w-72">
                         {item[0]}
                       </td>
                       <td className="border border-gray-300 px-3 py-2 text-sm text-gray-800">
@@ -50,3 +50,5 @@ const BAHons = () => {
 };
 
 export default BAHons;
+
+

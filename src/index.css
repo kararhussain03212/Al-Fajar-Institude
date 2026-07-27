@@ -1,1 +1,13 @@
-@import "tailwindcss";
+﻿@import "tailwindcss";
+
+:root {
+  --theme-primary: #125d6b;
+  --theme-primary-dark: #0f4b57;
+  --theme-accent: #d4a017;
+  --theme-warm: #c96f48;
+  --theme-surface: #d9d6cf;
+  --theme-surface-soft: #ece9e2;
+  --theme-navy: #1b2f3f;
+  --theme-text: #1f2937;
+}
+

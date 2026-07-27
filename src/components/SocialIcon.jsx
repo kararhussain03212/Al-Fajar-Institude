@@ -1,5 +1,6 @@
-const SocialIcon = () => {
+﻿const SocialIcon = () => {
   return null;
 };
 
 export default SocialIcon;
+

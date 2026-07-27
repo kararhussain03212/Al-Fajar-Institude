@@ -37,7 +37,7 @@ export default function NewsDetailPage() {
           <p className="text-gray-600 mt-2">The requested story does not exist.</p>
           <Link
             to="/news"
-            className="inline-block mt-5 bg-[#8C1515] text-white px-5 py-2.5 font-semibold hover:bg-[#6f1111] transition-colors"
+            className="inline-block mt-5 bg-[var(--theme-primary)] text-white px-5 py-2.5 font-semibold hover:bg-[var(--theme-primary-dark)] transition-colors"
           >
             Back to News
           </Link>
@@ -60,12 +60,12 @@ export default function NewsDetailPage() {
           <button
             type="button"
             onClick={() => navigate(-1)}
-            className="text-[#8C1515] font-semibold hover:underline"
+            className="text-[var(--theme-primary)] font-semibold hover:underline"
           >
             Back
           </button>
           <span className="text-gray-400">/</span>
-          <Link to="/news" className="text-gray-600 hover:text-[#8C1515]">
+          <Link to="/news" className="text-gray-600 hover:text-[var(--theme-primary)]">
             News
           </Link>
           <span className="text-gray-400">/</span>
@@ -75,7 +75,7 @@ export default function NewsDetailPage() {
         {/* Main Content */}
         <article className="bg-white border border-gray-200">
           <div className="p-6 sm:p-8 md:p-10">
-            <p className="text-xs font-semibold uppercase tracking-wider text-[#8C1515]">
+            <p className="text-xs font-semibold uppercase tracking-wider text-[var(--theme-primary)]">
               {article.category}
             </p>
             <h1 className="mt-2 text-3xl sm:text-4xl font-bold text-gray-900 leading-tight">
@@ -119,7 +119,7 @@ export default function NewsDetailPage() {
                   return (
                     <blockquote
                       key={index}
-                      className="border-l-4 border-[#8C1515] bg-red-50/50 px-5 py-4"
+                      className="border-l-4 border-[var(--theme-primary)] bg-[var(--theme-surface-soft)]/70 px-5 py-4"
                     >
                       <p className="text-xl italic text-gray-800">"{block.text}"</p>
                       {block.attribution ? (
@@ -147,7 +147,7 @@ export default function NewsDetailPage() {
                   {article.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="text-xs bg-gray-100 text-gray-700 px-3 py-1.5 border border-gray-200"
+                      className="text-xs bg-[var(--theme-surface-soft)] text-gray-700 px-3 py-1.5 border border-gray-200"
                     >
                       {tag}
                     </span>
@@ -171,7 +171,7 @@ export default function NewsDetailPage() {
                 >
                   <img src={item.image} alt={item.title} className="w-full h-44 object-cover" />
                   <div className="p-4">
-                    <p className="text-xs font-semibold uppercase tracking-wider text-[#8C1515]">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-[var(--theme-primary)]">
                       {item.category}
                     </p>
                     <h4 className="mt-1 text-base font-bold text-gray-900 line-clamp-2">

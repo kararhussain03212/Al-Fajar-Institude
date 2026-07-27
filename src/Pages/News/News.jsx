@@ -34,7 +34,7 @@ export default function News() {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-8 sm:mb-10">
-          <h1 className="text-3xl sm:text-4xl font-bold text-[#8C1515]">News & Stories</h1>
+          <h1 className="text-3xl sm:text-4xl font-bold text-[var(--theme-primary)]">News & Stories</h1>
           <p className="text-gray-600 mt-2">Latest updates from Al-Fajr Institute</p>
         </div>
 
@@ -47,8 +47,8 @@ export default function News() {
                 onClick={() => setActiveCategory(cat)}
                 className={`px-4 py-2 text-sm font-medium rounded transition-colors ${
                   activeCategory === cat
-                    ? "bg-[#8C1515] text-white"
-                    : "bg-white text-gray-700 hover:bg-gray-100"
+                    ? "bg-[var(--theme-primary)] text-white"
+                    : "bg-white text-gray-700 hover:bg-[var(--theme-surface-soft)]"
                 }`}
               >
                 {cat}
@@ -71,7 +71,7 @@ export default function News() {
                 className="w-full h-72 sm:h-96 object-cover"
               />
               <div className="p-5">
-                <p className="text-xs font-semibold uppercase tracking-wider text-[#8C1515]">
+                <p className="text-xs font-semibold uppercase tracking-wider text-[var(--theme-primary)]">
                   {featuredArticle.category}
                 </p>
                 <h3 className="mt-2 text-2xl sm:text-3xl font-bold leading-tight">
@@ -97,7 +97,7 @@ export default function News() {
                     className="w-full h-44 object-cover"
                   />
                   <div className="p-4">
-                    <p className="text-xs font-semibold uppercase tracking-wider text-[#8C1515]">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-[var(--theme-primary)]">
                       {article.category}
                     </p>
                     <h3 className="mt-1 text-lg font-bold leading-tight">{article.title}</h3>
@@ -133,7 +133,7 @@ export default function News() {
                     className="w-full h-48 object-cover"
                   />
                   <div className="p-4">
-                    <p className="text-xs font-semibold uppercase tracking-wider text-[#8C1515]">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-[var(--theme-primary)]">
                       {article.category}
                     </p>
                     <h3 className="mt-1 text-lg font-bold leading-snug line-clamp-2">

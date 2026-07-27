@@ -61,7 +61,7 @@ const Navbar = ({ transparentOnHero = false }) => {
     >
       <div
         className={`text-white transition-colors duration-300 ${
-          transparent ? "bg-transparent" : "bg-[#8C1515]"
+          transparent ? "bg-transparent" : "bg-[var(--theme-primary)]"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -86,7 +86,7 @@ const Navbar = ({ transparentOnHero = false }) => {
               <button
                 onClick={() => setIsSearchOpen(!isSearchOpen)}
                 className={`flex items-center justify-center space-x-1.5 text-base px-3 py-1.5 w-22.5 transition-all duration-200 ${
-                  isSearchOpen ? "bg-[#6F1111]" : "hover:opacity-80"
+                  isSearchOpen ? "bg-[var(--theme-primary)]" : "hover:opacity-80"
                 }`}
               >
                 {isSearchOpen ? (
@@ -142,7 +142,7 @@ const Navbar = ({ transparentOnHero = false }) => {
               <Link
                 key={item.label}
                 to={item.to}
-                className="text-black text-xl font-medium hover:text-[#8C1515] hover:underline transition-all duration-200"
+                className="text-black text-xl font-medium hover:text-[var(--theme-primary)] hover:underline transition-all duration-200"
               >
                 {item.label}
               </Link>
@@ -160,7 +160,7 @@ const Navbar = ({ transparentOnHero = false }) => {
                     key={item.label}
                     to={item.to}
                     onClick={() => setIsMenuOpen(false)}
-                    className="block px-2 py-2 text-gray-800 font-medium hover:bg-gray-100 hover:text-[#8C1515] rounded transition-colors"
+                    className="block px-2 py-2 text-gray-800 font-medium hover:bg-[var(--theme-surface-soft)] hover:text-[var(--theme-primary)] rounded transition-colors"
                   >
                     {item.label}
                   </Link>
@@ -176,7 +176,7 @@ const Navbar = ({ transparentOnHero = false }) => {
                     key={item.label}
                     to={item.to}
                     onClick={() => setIsMenuOpen(false)}
-                    className="block px-2 py-2 text-gray-700 hover:bg-gray-100 hover:text-[#8C1515] rounded transition-colors"
+                    className="block px-2 py-2 text-gray-700 hover:bg-[var(--theme-surface-soft)] hover:text-[var(--theme-primary)] rounded transition-colors"
                   >
                     {item.label}
                   </Link>
@@ -202,7 +202,7 @@ const Navbar = ({ transparentOnHero = false }) => {
                     value="web"
                     checked={searchType === "web"}
                     onChange={() => setSearchType("web")}
-                    className="w-4 h-4 text-[#006CB8] border-gray-300 focus:ring-[#006CB8]"
+                    className="w-4 h-4 text-[var(--theme-accent)] border-gray-300 focus:ring-[var(--theme-accent)]"
                   />
                   <span className="ml-2 text-gray-700">Web</span>
                 </label>
@@ -213,7 +213,7 @@ const Navbar = ({ transparentOnHero = false }) => {
                     value="people"
                     checked={searchType === "people"}
                     onChange={() => setSearchType("people")}
-                    className="w-4 h-4 text-[#006CB8] border-gray-300 focus:ring-[#006CB8]"
+                    className="w-4 h-4 text-[var(--theme-accent)] border-gray-300 focus:ring-[var(--theme-accent)]"
                   />
                   <span className="ml-2 text-gray-700">People</span>
                 </label>
@@ -228,11 +228,11 @@ const Navbar = ({ transparentOnHero = false }) => {
                 <input
                   type="text"
                   placeholder="Search Al Fajr websites"
-                  className="w-full pl-12 pr-4 py-3 border border-gray-300 border-r-0 focus:outline-none focus:border-[#006CB8] text-gray-700 placeholder-gray-500"
+                  className="w-full pl-12 pr-4 py-3 border border-gray-300 border-r-0 focus:outline-none focus:border-[var(--theme-accent)] text-gray-700 placeholder-gray-500"
                 />
               </div>
 
-              <button className="bg-[#8C1515] hover:bg-[#6F1111] text-white px-8 py-3 flex items-center justify-center space-x-2 transition-colors min-w-40">
+              <button className="bg-[var(--theme-primary)] hover:bg-[#0f4b57] text-white px-8 py-3 flex items-center justify-center space-x-2 transition-colors min-w-40">
                 <FiGlobe className="w-4 h-4" />
                 <span className="font-medium">Search Web</span>
               </button>
@@ -240,10 +240,10 @@ const Navbar = ({ transparentOnHero = false }) => {
 
             <div className="text-center mt-6">
               <span className="text-gray-700">Other ways to search: </span>
-              <Link to="/contact-us" className="text-[#006CB8] hover:underline ml-1">
+              <Link to="/contact-us" className="text-[var(--theme-accent)] hover:underline ml-1">
                 Map
               </Link>
-              <Link to="/faculty" className="text-[#006CB8] hover:underline ml-3">
+              <Link to="/faculty" className="text-[var(--theme-accent)] hover:underline ml-3">
                 Profiles
               </Link>
             </div>
@@ -255,4 +255,6 @@ const Navbar = ({ transparentOnHero = false }) => {
 };
 
 export default Navbar;
+
+
 

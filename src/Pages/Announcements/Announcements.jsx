@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+﻿import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   FiArrowRight,
@@ -76,7 +76,7 @@ export default function Announcements() {
   };
 
   return (
-    <section className="bg-[#f5f5f5] pb-14 pt-8 sm:pt-10">
+    <section className="bg-[var(--theme-surface)] pb-14 pt-8 sm:pt-10">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="border border-gray-200 bg-white p-5 sm:p-6">
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
@@ -87,14 +87,14 @@ export default function Announcements() {
                 value={query}
                 onChange={(event) => setQuery(event.target.value)}
                 placeholder="Search announcements"
-                className="h-11 w-full border border-gray-300 pl-10 pr-3 text-sm text-gray-800 outline-none focus:border-[#8C1515]"
+                className="h-11 w-full border border-gray-300 pl-10 pr-3 text-sm text-gray-800 outline-none focus:border-[var(--theme-primary)]"
               />
             </label>
 
             <select
               value={category}
               onChange={(event) => setCategory(event.target.value)}
-              className="h-11 w-full border border-gray-300 px-3 text-sm text-gray-800 outline-none focus:border-[#8C1515]"
+              className="h-11 w-full border border-gray-300 px-3 text-sm text-gray-800 outline-none focus:border-[var(--theme-primary)]"
             >
               {categories.map((option) => (
                 <option key={option} value={option}>
@@ -106,7 +106,7 @@ export default function Announcements() {
             <select
               value={audience}
               onChange={(event) => setAudience(event.target.value)}
-              className="h-11 w-full border border-gray-300 px-3 text-sm text-gray-800 outline-none focus:border-[#8C1515]"
+              className="h-11 w-full border border-gray-300 px-3 text-sm text-gray-800 outline-none focus:border-[var(--theme-primary)]"
             >
               {audiences.map((option) => (
                 <option key={option} value={option}>
@@ -118,7 +118,7 @@ export default function Announcements() {
             <select
               value={location}
               onChange={(event) => setLocation(event.target.value)}
-              className="h-11 w-full border border-gray-300 px-3 text-sm text-gray-800 outline-none focus:border-[#8C1515]"
+              className="h-11 w-full border border-gray-300 px-3 text-sm text-gray-800 outline-none focus:border-[var(--theme-primary)]"
             >
               {locations.map((option) => (
                 <option key={option} value={option}>
@@ -131,7 +131,7 @@ export default function Announcements() {
           {hasFilters && (
             <button
               onClick={resetFilters}
-              className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#8C1515] hover:text-[#6f1111]"
+              className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[var(--theme-primary)] hover:text-[var(--theme-primary-dark)]"
             >
               <FiX />
               Clear filters
@@ -154,19 +154,19 @@ export default function Announcements() {
 
               <div className="mt-4 grid grid-cols-1 gap-2 text-sm text-gray-700 sm:grid-cols-2 lg:grid-cols-4">
                 <p className="inline-flex items-center gap-2">
-                  <FiBell className="text-[#8C1515]" />
+                  <FiBell className="text-[var(--theme-primary)]" />
                   {item.category}
                 </p>
                 <p className="inline-flex items-center gap-2">
-                  <FiMapPin className="text-[#8C1515]" />
+                  <FiMapPin className="text-[var(--theme-primary)]" />
                   {item.location || "Mianwali Campus"}
                 </p>
                 <p className="inline-flex items-center gap-2">
-                  <FiCalendar className="text-[#8C1515]" />
+                  <FiCalendar className="text-[var(--theme-primary)]" />
                   Date: {formatDate(item.date)}
                 </p>
                 <p className="inline-flex items-center gap-2">
-                  <FiUsers className="text-[#8C1515]" />
+                  <FiUsers className="text-[var(--theme-primary)]" />
                   {item.audience}
                 </p>
               </div>
@@ -174,7 +174,7 @@ export default function Announcements() {
               <div className="mt-5 flex flex-wrap gap-3">
                 <Link
                   to={`/announcements/${item.id}`}
-                  className="inline-flex items-center gap-2 bg-[#8C1515] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#6f1111]"
+                  className="inline-flex items-center gap-2 bg-[var(--theme-primary)] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[var(--theme-primary-dark)]"
                 >
                   View Details <FiArrowRight />
                 </Link>
@@ -194,7 +194,7 @@ export default function Announcements() {
             </p>
             <button
               onClick={resetFilters}
-              className="mt-5 bg-[#8C1515] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#6f1111]"
+              className="mt-5 bg-[var(--theme-primary)] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[var(--theme-primary-dark)]"
             >
               Reset Filters
             </button>
@@ -204,3 +204,5 @@ export default function Announcements() {
     </section>
   );
 }
+
+

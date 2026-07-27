@@ -10,8 +10,7 @@ const stats = [
 const programs = [
   {
     title: "Undergraduate Studies",
-    image:
-      "https://res.cloudinary.com/dbf8vcf8o/image/upload/v1711798042/IMG_0938_6ea4bdbc9c.jpg",
+    image: "/academics/academics-1.png",
     alt: "Undergraduate students collaborating",
     points: [
       {
@@ -34,41 +33,18 @@ const programs = [
   },
   {
     title: "Short Courses",
-    image:
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1400&auto=format&fit=crop",
+    image: "/academics/academics-2.png",
     alt: "Graduate students discussing a project",
     points: [
       {
-        title: "Short Courses Office",
-        text: "Get support, mentoring, and resources to succeed in advanced study.",
+        title: "Short Courses",
+        text: "Gain practical, in-demand skills through our intensive short programs designed to bridge the gap between education and industry.",
         linkLabel: "Graduate Education",
         linkTo: "/academic/hons",
       },
       {
         title: "Facts and Figures",
-        text: "Explore graduate programs, specializations, and advanced opportunities.",
-      },
-    ],
-  },
-  {
-    title: "Lifelong Learning",
-    image:
-      "https://images.unsplash.com/photo-1522661067900-ab829854a57f?q=80&w=1400&auto=format&fit=crop",
-    alt: "Learners attending a lifelong learning class",
-    points: [
-      {
-        title: "From Pre-K to College",
-        text: "Educational and enrichment opportunities for learners at every stage.",
-        linkLabel: "Pre-K to College",
-        linkTo: "/academic/shortcourse",
-      },
-      {
-        title: "Professional Development",
-        text: "Strengthen skills and grow confidently in your professional journey.",
-      },
-      {
-        title: "Exploration and Enrichment",
-        text: "Keep learning with programs designed for curiosity and personal growth.",
+        text: "Explore short courses programs, specializations, and advanced opportunities.",
       },
     ],
   },
@@ -91,7 +67,7 @@ const Academics = () => {
 
         <div className="mt-10 max-w-6xl mx-auto">
           <img
-            src="https://images.unsplash.com/photo-1588072432836-e10032774350?q=80&w=1800&auto=format&fit=crop"
+            src="academics/academics-4.png"
             alt="Students learning together in a classroom"
             className="w-full h-[260px] sm:h-[380px] md:h-[500px] lg:h-[620px] object-cover"
           />
@@ -135,7 +111,10 @@ const Academics = () => {
                 }`}
               >
                 {program.points.map((point, pointIndex) => (
-                  <div key={point.title} className={pointIndex > 0 ? "mt-7" : ""}>
+                  <div
+                    key={point.title}
+                    className={pointIndex > 0 ? "mt-7" : ""}
+                  >
                     <h3 className="text-xl font-semibold text-black">
                       {point.title}
                     </h3>
@@ -145,7 +124,7 @@ const Academics = () => {
                     {/* {point.linkTo && point.linkLabel ? (
                       <Link
                         to={point.linkTo}
-                        className="inline-block mt-2 text-[#006CB8] font-medium hover:underline"
+                        className="inline-block mt-2 text-[var(--theme-accent)] font-medium hover:underline"
                       >
                         {point.linkLabel} &rsaquo;
                       </Link>
@@ -167,8 +146,8 @@ const Academics = () => {
             problems.
           </p>
           <Link
-            to="/about"
-            className="inline-block mt-6 bg-[#8C1515] hover:bg-[#6f1111] px-6 py-3 font-semibold transition-colors"
+            to="/admissions/detail"
+            className="inline-block mt-6 bg-[var(--theme-primary)] hover:bg-[var(--theme-primary-dark)] px-6 py-3 font-semibold transition-colors"
           >
             Learn more about our seven schools
           </Link>

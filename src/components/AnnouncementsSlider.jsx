@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+﻿import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
 const AnnouncementsSlider = () => {
@@ -51,7 +51,7 @@ const AnnouncementsSlider = () => {
       <div className="max-w-350 mx-auto flex items-center">
         {/* Announcements Label */}
         <div className="bg-[#2e7d32] text-white px-6 py-3 flex items-center gap-2 shrink-0">
-          <span className="text-xl">⚡</span>
+          <span className="text-xl">âš¡</span>
           <span className="font-bold text-sm uppercase tracking-wide">
             Announcements
           </span>
@@ -87,3 +87,4 @@ const AnnouncementsSlider = () => {
 };
 
 export default AnnouncementsSlider;
+

@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+﻿import { Link, useParams } from "react-router-dom";
 import {
   FiArrowRight,
   FiBell,
@@ -25,7 +25,7 @@ export default function AnnouncmentsDetails() {
 
   if (!announcement) {
     return (
-      <div className="min-h-screen bg-[#f5f5f5] flex items-center justify-center px-4">
+      <div className="min-h-screen bg-[var(--theme-surface)] flex items-center justify-center px-4">
         <div className="bg-white border border-gray-200 p-8 text-center max-w-md w-full">
           <h2 className="text-2xl font-bold text-gray-900">
             Announcement not found
@@ -35,7 +35,7 @@ export default function AnnouncmentsDetails() {
           </p>
           <Link
             to="/announcements"
-            className="inline-block mt-5 bg-[#8C1515] text-white px-5 py-2.5 font-semibold hover:bg-[#6f1111] transition-colors"
+            className="inline-block mt-5 bg-[var(--theme-primary)] text-white px-5 py-2.5 font-semibold hover:bg-[var(--theme-primary-dark)] transition-colors"
           >
             Back to Announcements
           </Link>
@@ -54,13 +54,13 @@ export default function AnnouncmentsDetails() {
   const announcementLocation = announcement.location || "Mianwali Campus";
 
   return (
-    <section className="bg-[#f5f5f5] pb-14 ">
+    <section className="bg-[var(--theme-surface)] pb-14 ">
       <div className="mx-auto max-w-full bg-white px-4 sm:px-6 lg:px-8 py-10">
         <div className=" max-w-300 m-auto p-5 sm:p-7">
           {/* <button
             type="button"
             onClick={() => navigate(-1)}
-            className="inline-flex items-center gap-2 text-sm font-semibold text-[#8C1515] hover:text-[#6f1111]"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--theme-primary)] hover:text-[var(--theme-primary-dark)]"
           >
             <FiArrowLeft />
             Back to announcements
@@ -102,7 +102,7 @@ export default function AnnouncmentsDetails() {
                   return (
                     <blockquote
                       key={index}
-                      className="border-l-4 border-[#8C1515] bg-red-50/60 px-5 py-4"
+                      className="border-l-4 border-[var(--theme-primary)] bg-red-50/60 px-5 py-4"
                     >
                       <p className="text-lg italic text-gray-800">
                         "{block.text}"
@@ -135,7 +135,7 @@ export default function AnnouncmentsDetails() {
                   <Link
                     key={item.id}
                     to={`/announcements/${item.id}`}
-                    className="flex items-center justify-between border border-gray-200 px-4 py-3 text-sm font-semibold text-gray-800 hover:border-[#8C1515] hover:text-[#8C1515]"
+                    className="flex items-center justify-between border border-gray-200 px-4 py-3 text-sm font-semibold text-gray-800 hover:border-[var(--theme-primary)] hover:text-[var(--theme-primary)]"
                   >
                     <span>{item.title}</span>
                     <FiArrowRight />
@@ -153,26 +153,26 @@ export default function AnnouncmentsDetails() {
             </h3>
             <div className="mt-4 space-y-3 text-sm text-gray-700">
               <p className="flex items-center gap-2">
-                <FiBell className="text-[#8C1515]" />
+                <FiBell className="text-[var(--theme-primary)]" />
                 <span>{announcement.category}</span>
               </p>
               <p className="flex items-center gap-2">
-                <FiUsers className="text-[#8C1515]" />
+                <FiUsers className="text-[var(--theme-primary)]" />
                 <span>{announcement.audience}</span>
               </p>
               <p className="flex items-center gap-2">
-                <FiMapPin className="text-[#8C1515]" />
+                <FiMapPin className="text-[var(--theme-primary)]" />
                 <span>{announcementLocation}</span>
               </p>
               <p className="flex items-center gap-2">
-                <FiCalendar className="text-[#8C1515]" />
+                <FiCalendar className="text-[var(--theme-primary)]" />
                 <span>Published: {formatDate(announcement.date)}</span>
               </p>
             </div>
 
             <Link
               to="/announcements"
-              className="mt-5 block bg-[#8C1515] px-5 py-3 text-center text-sm font-semibold text-white hover:bg-[#6f1111]"
+              className="mt-5 block bg-[var(--theme-primary)] px-5 py-3 text-center text-sm font-semibold text-white hover:bg-[var(--theme-primary-dark)]"
             >
               Back to All Announcements
             </Link>
@@ -183,3 +183,5 @@ export default function AnnouncmentsDetails() {
     </section>
   );
 }
+
+

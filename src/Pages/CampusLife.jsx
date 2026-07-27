@@ -1,75 +1,75 @@
-import React, { useEffect, useRef, useState } from "react";
+﻿import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "../components/Button";
 
 const cards = [
   {
-    title: "Student Life",
+    title: "Engaging Beyond the Classroom",
     description:
-      "A residential campus with diverse housing, exceptional dining, and over 600 student organizations",
-    linkText: "Student Affairs",
-    link: "/campus-life",
+      "Through a diverse range of extracurricular events, students build invaluable skills, creating memories and milestones that last a lifetime.",
+    // linkText: "Student Affairs",
+    // link: "/campus-life",
     image:
-      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=900&auto=format&fit=crop",
+      "/campus-life/campus-1.png",
     featured: true,
   },
   {
-    title: "Constructive Dialogue",
+    title: "Empowering Minds, Shaping Futures",
     description:
-      "Uplifting academic freedom and free speech; curiosity and critical inquiry; open, inclusive exchange of ideas; and civic engagement and citizenship",
-    linkText: "ePluribus",
-    link: "/campus-life",
+      "Our interactive classrooms foster a culture of curiosity and dedication where students engage deeply with every lesson.",
+    // linkText: "ePluribus",
+    // link: "/campus-life",
     image:
-      "https://images.unsplash.com/photo-1558970439-add78fc68990?q=80&w=1620&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "/campus-life/campus-2.png",
     featured: true,
   },
   {
     title: "Recreation & Wellness",
     description:
-      "State-of-the-art facilities and fitness programs to encourage movement and play",
-    link: "/campus-life",
-    linkText: "Recreation & Wellness",
+      "Beyond academics, we provide the space and resources to focus on your personal well-being and long-term physical health.",
+    // link: "/campus-life",
+    // linkText: "Recreation & Wellness",
     image:
-      "https://www.stanford.edu/wp-content/uploads/2022/04/Campus-life-3.jpg",
+      "/campus-life/campus-3.png",
     featured: true,
   },
 ];
 
-const schools = [
-  {
-    title: "Mathematics",
-    link: "/academic/mathematics",
-    featured: true,
-  },
-  {
-    title: "English",
-    link: "/academic/english",
-    featured: true,
-  },
-  {
-    title: "Computer Science",
-    link: "/academic/computer-science",
-    featured: true,
-  },
-  {
-    title: "BBA Hons",
-    link: "/academic/hons",
-    featured: false,
-  },
-  {
-    title: "Short Courses",
-    link: "/academic/shortcourse",
-    featured: true,
-  },
-];
+// const schools = [
+//   {
+//     title: "Mathematics",
+//     link: "/academic/mathematics",
+//     featured: true,
+//   },
+//   {
+//     title: "English",
+//     link: "/academic/english",
+//     featured: true,
+//   },
+//   {
+//     title: "Computer Science",
+//     link: "/academic/computer-science",
+//     featured: true,
+//   },
+//   {
+//     title: "BBA Hons",
+//     link: "/academic/hons",
+//     featured: false,
+//   },
+//   {
+//     title: "Short Courses",
+//     link: "/academic/shortcourse",
+//     featured: true,
+//   },
+// ];
 
 const CampusLife = () => {
   const testimonialRef = useRef(null);
   const [isTestimonialVisible, setIsTestimonialVisible] = useState(false);
   const featuredCards = cards.filter((card) => card.featured);
-  const featuredSchools = schools.filter((school) => school.featured);
+  // const featuredSchools = schools.filter((school) => school.featured);
   const displayedCards = featuredCards.length ? featuredCards : cards;
-  const displayedSchools = featuredSchools.length ? featuredSchools : schools;
+  // const displayedSchools = featuredSchools.length ? featuredSchools : schools;
 
   useEffect(() => {
     const node = testimonialRef.current;
@@ -91,13 +91,13 @@ const CampusLife = () => {
   }, []);
 
   return (
-    <section className="relative z-30 bg-[#f4f4f4] py-12 sm:py-16 md:py-20">
+    <section className="relative z-30 bg-[var(--theme-surface-soft)] py-12 sm:py-16 md:py-20">
       <div className="max-w-375 mx-auto px-4 sm:px-6">
         <header className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[var(--theme-primary)] mb-3">
             Campus Life
           </h2>
-          <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
+          <p className="text-[var(--theme-text)]/70 text-base sm:text-lg leading-relaxed">
             Building a vibrant community of creative and accomplished people
             from around the world
           </p>
@@ -114,29 +114,29 @@ const CampusLife = () => {
                 />
               </div>
 
-              <h3 className="mt-3 text-gray-900 text-lg sm:text-xl font-bold leading-tight">
+              <h3 className="mt-3 text-[var(--theme-primary)] text-lg sm:text-xl font-bold leading-tight">
                 {card.title}
               </h3>
-              <p className="mt-2 text-gray-700 text-base sm:text-lg leading-relaxed">
+              <p className="mt-2 text-[var(--theme-text)]/70 text-base sm:text-lg leading-relaxed">
                 {card.description}
               </p>
-              <Link
+              {/* <Link
                 to={card.link}
-                className="inline-block mt-3 text-base sm:text-lg text-[#006CB8] hover:underline"
+                className="inline-block mt-3 text-base sm:text-lg text-[var(--theme-accent)] hover:underline"
               >
                 {card.linkText} &rsaquo;
-              </Link>
+              </Link> */}
             </article>
           ))}
         </div>
 
-        <div className="text-center mt-12 sm:mt-16">
-          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
+        {/* <div className="text-center mt-12 sm:mt-16">
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[var(--theme-primary)] leading-tight">
             Five schools in which to pursue your passions
           </h3>
           <ul className="mt-4 flex flex-wrap justify-center items-center text-base sm:text-lg leading-tight">
             {displayedSchools.map((school, index) => (
-              <li key={school.title} className="text-[#006CB8]">
+              <li key={school.title} className="text-[var(--theme-accent)]">
                 <Link to={school.link} className="hover:underline">
                   {school.title}
                 </Link>
@@ -146,7 +146,7 @@ const CampusLife = () => {
               </li>
             ))}
           </ul>
-        </div>
+        </div> */}
 
         <div className="flex justify-center mt-12 sm:mt-14">
           <Button
@@ -224,3 +224,5 @@ const CampusLife = () => {
 };
 
 export default CampusLife;
+
+

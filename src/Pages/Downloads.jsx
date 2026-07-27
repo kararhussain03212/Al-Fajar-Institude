@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import { FiFileText, FiDownload } from "react-icons/fi";
 
 import schemeComputerScience from "../assets/Downloads/Schemas_Study_of_Computer_Science_b10e2de46e.pdf";
@@ -49,7 +49,7 @@ const downloadItems = [
 
 const Downloads = () => {
   return (
-    <section className="bg-[#f5f5f5] py-12 sm:py-16">
+    <section className="bg-[var(--theme-surface)] py-12 sm:py-16">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="mb-8">
           <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl">Downloads</h1>
@@ -61,7 +61,7 @@ const Downloads = () => {
         <div className="overflow-x-auto border border-gray-200 bg-white">
           <table className="min-w-full border-collapse">
             <thead>
-              <tr className="bg-gray-100">
+              <tr className="bg-[var(--theme-surface-soft)]">
                 <th className="border-b border-gray-200 px-4 py-3 text-left text-sm font-semibold text-gray-900">
                   Title
                 </th>
@@ -75,7 +75,7 @@ const Downloads = () => {
                 <tr key={item.title} className={index % 2 === 0 ? "bg-[#f7f7f7]" : "bg-white"}>
                   <td className="border-b border-gray-200 px-4 py-5 text-lg text-gray-800">
                     <div className="flex items-center gap-3">
-                      <FiFileText className="text-[#8C1515]" />
+                      <FiFileText className="text-[var(--theme-primary)]" />
                       <span>{item.title}</span>
                     </div>
                   </td>
@@ -83,7 +83,7 @@ const Downloads = () => {
                     <a
                       href={item.file}
                       download={item.fileName}
-                      className="inline-flex items-center gap-2 rounded bg-[#E5394B] px-4 py-2 text-lg font-semibold text-white transition-colors hover:bg-[#8C1515]"
+                      className="inline-flex items-center gap-2 rounded bg-[var(--theme-warm)] px-4 py-2 text-lg font-semibold text-white transition-colors hover:bg-[var(--theme-primary)]"
                     >
                       <span>Download File</span>
                       <FiDownload />
@@ -100,3 +100,4 @@ const Downloads = () => {
 };
 
 export default Downloads;
+

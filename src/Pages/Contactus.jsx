@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+﻿import React, { useState } from "react";
 import {
   FiCheckCircle,
   FiClock,
@@ -16,9 +16,9 @@ const contactInfo = [
   },
   {
     title: "Phone",
-    value: "+92 300 0000000",
+    value: "+92-304-1115554",
     icon: FiPhone,
-    href: "tel:+923000000000",
+    href: "tel:+923041115554",
   },
   {
     title: "Email",
@@ -55,7 +55,8 @@ const Contactus = () => {
   const validate = () => {
     const nextErrors = {};
 
-    if (!formData.fullName.trim()) nextErrors.fullName = "Full name is required.";
+    if (!formData.fullName.trim())
+      nextErrors.fullName = "Full name is required.";
     if (!formData.email.trim()) nextErrors.email = "Email is required.";
     if (!formData.subject.trim()) nextErrors.subject = "Subject is required.";
     if (!formData.message.trim()) nextErrors.message = "Message is required.";
@@ -83,11 +84,12 @@ const Contactus = () => {
   };
 
   return (
-    <section className="bg-[#f5f5f5] pb-14">
-        <div className="relative mx-auto flex h-full max-w-6xl flex-col justify-center px-4 text-white sm:px-6">
-          <h1 className="text-4xl font-bold sm:text-5xl text-black mt-10">Contact Us</h1>
-        </div>
-
+    <section className="bg-[var(--theme-surface)] pb-14">
+      <div className="relative mx-auto flex h-full max-w-6xl flex-col justify-center px-4 text-white sm:px-6">
+        <h1 className="text-4xl font-bold sm:text-5xl text-black mt-10">
+          Contact Us
+        </h1>
+      </div>
 
       <div className="mx-auto mt-10 max-w-6xl px-4 sm:px-6">
         <div className="grid grid-cols-1 gap-7 lg:grid-cols-[360px_1fr]">
@@ -96,15 +98,23 @@ const Contactus = () => {
               const Icon = item.icon;
 
               return (
-                <article key={item.title} className="border border-gray-200 bg-white p-5">
+                <article
+                  key={item.title}
+                  className="border border-gray-200 bg-white p-5"
+                >
                   <div className="flex items-start gap-3">
-                    <div className="rounded-full bg-[#8C1515]/10 p-2.5 text-[#8C1515]">
+                    <div className="rounded-full bg-[var(--theme-primary)]/10 p-2.5 text-[var(--theme-primary)]">
                       <Icon />
                     </div>
                     <div>
-                      <h2 className="text-xl font-semibold text-gray-900">{item.title}</h2>
+                      <h2 className="text-xl font-semibold text-gray-900">
+                        {item.title}
+                      </h2>
                       {item.href ? (
-                        <a href={item.href} className="mt-1 block text-gray-700 hover:text-[#8C1515]">
+                        <a
+                          href={item.href}
+                          className="mt-1 block text-gray-700 hover:text-[var(--theme-primary)]"
+                        >
                           {item.value}
                         </a>
                       ) : (
@@ -115,8 +125,6 @@ const Contactus = () => {
                 </article>
               );
             })}
-
-            
           </aside>
 
           <div className="border border-gray-200 bg-white p-6 sm:p-8">
@@ -132,75 +140,96 @@ const Contactus = () => {
               </div>
             )}
 
-            <form onSubmit={handleSubmit} className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <form
+              onSubmit={handleSubmit}
+              className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2"
+            >
               <div>
-                <label className="mb-1 block text-sm font-semibold text-gray-700">Full Name</label>
+                <label className="mb-1 block text-sm font-semibold text-gray-700">
+                  Full Name
+                </label>
                 <input
                   type="text"
                   name="fullName"
                   value={formData.fullName}
                   onChange={handleChange}
-                  className="h-11 w-full border border-gray-300 px-3 text-sm outline-none focus:border-[#8C1515]"
+                  className="h-11 w-full border border-gray-300 px-3 text-sm outline-none focus:border-[var(--theme-primary)]"
                   placeholder="Enter your full name"
                 />
-                {errors.fullName && <p className="mt-1 text-xs text-red-600">{errors.fullName}</p>}
+                {errors.fullName && (
+                  <p className="mt-1 text-xs text-red-600">{errors.fullName}</p>
+                )}
               </div>
 
               <div>
-                <label className="mb-1 block text-sm font-semibold text-gray-700">Email</label>
+                <label className="mb-1 block text-sm font-semibold text-gray-700">
+                  Email
+                </label>
                 <input
                   type="email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="h-11 w-full border border-gray-300 px-3 text-sm outline-none focus:border-[#8C1515]"
+                  className="h-11 w-full border border-gray-300 px-3 text-sm outline-none focus:border-[var(--theme-primary)]"
                   placeholder="Enter your email"
                 />
-                {errors.email && <p className="mt-1 text-xs text-red-600">{errors.email}</p>}
+                {errors.email && (
+                  <p className="mt-1 text-xs text-red-600">{errors.email}</p>
+                )}
               </div>
 
               <div>
-                <label className="mb-1 block text-sm font-semibold text-gray-700">Phone</label>
+                <label className="mb-1 block text-sm font-semibold text-gray-700">
+                  Phone
+                </label>
                 <input
                   type="tel"
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="h-11 w-full border border-gray-300 px-3 text-sm outline-none focus:border-[#8C1515]"
+                  className="h-11 w-full border border-gray-300 px-3 text-sm outline-none focus:border-[var(--theme-primary)]"
                   placeholder="Enter your phone number"
                 />
               </div>
 
               <div>
-                <label className="mb-1 block text-sm font-semibold text-gray-700">Subject</label>
+                <label className="mb-1 block text-sm font-semibold text-gray-700">
+                  Subject
+                </label>
                 <input
                   type="text"
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  className="h-11 w-full border border-gray-300 px-3 text-sm outline-none focus:border-[#8C1515]"
+                  className="h-11 w-full border border-gray-300 px-3 text-sm outline-none focus:border-[var(--theme-primary)]"
                   placeholder="Subject"
                 />
-                {errors.subject && <p className="mt-1 text-xs text-red-600">{errors.subject}</p>}
+                {errors.subject && (
+                  <p className="mt-1 text-xs text-red-600">{errors.subject}</p>
+                )}
               </div>
 
               <div className="sm:col-span-2">
-                <label className="mb-1 block text-sm font-semibold text-gray-700">Message</label>
+                <label className="mb-1 block text-sm font-semibold text-gray-700">
+                  Message
+                </label>
                 <textarea
                   name="message"
                   rows={6}
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full resize-none border border-gray-300 px-3 py-2 text-sm outline-none focus:border-[#8C1515]"
+                  className="w-full resize-none border border-gray-300 px-3 py-2 text-sm outline-none focus:border-[var(--theme-primary)]"
                   placeholder="Write your message"
                 />
-                {errors.message && <p className="mt-1 text-xs text-red-600">{errors.message}</p>}
+                {errors.message && (
+                  <p className="mt-1 text-xs text-red-600">{errors.message}</p>
+                )}
               </div>
 
               <div className="sm:col-span-2">
                 <button
                   type="submit"
-                  className="inline-flex items-center gap-2 bg-[#8C1515] px-6 py-3 text-sm font-semibold text-white hover:bg-[#6f1111]"
+                  className="inline-flex items-center gap-2 bg-[var(--theme-primary)] px-6 py-3 text-sm font-semibold text-white hover:bg-[var(--theme-primary-dark)]"
                 >
                   Send Message
                   <FiSend />
@@ -215,3 +244,4 @@ const Contactus = () => {
 };
 
 export default Contactus;
+

@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import { Link, useParams } from "react-router-dom";
 import {
   FiArrowLeft,
@@ -28,7 +28,7 @@ const JobDetails = () => {
 
   if (!job) {
     return (
-      <section className="min-h-screen bg-[#f5f5f5] px-4 py-20">
+      <section className="min-h-screen bg-[var(--theme-surface)] px-4 py-20">
         <div className="mx-auto max-w-xl border border-gray-200 bg-white p-8 text-center">
           <h1 className="text-3xl font-bold text-gray-900">Job not found</h1>
           <p className="mt-2 text-gray-600">
@@ -36,7 +36,7 @@ const JobDetails = () => {
           </p>
           <Link
             to="/job"
-            className="mt-5 inline-flex items-center gap-2 bg-[#8C1515] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#6f1111]"
+            className="mt-5 inline-flex items-center gap-2 bg-[var(--theme-primary)] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[var(--theme-primary-dark)]"
           >
             <FiArrowLeft />
             Back to Jobs
@@ -51,14 +51,14 @@ const JobDetails = () => {
     .slice(0, 3);
 
   return (
-    <section className="bg-[#f5f5f5] pb-14">
+    <section className="bg-[var(--theme-surface)] pb-14">
       <div className="relative h-72 overflow-hidden sm:h-96">
         <img
           src={job.image}
           alt={job.title}
           className="absolute inset-0 h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-linear-to-r from-[#0b1324]/85 to-[#8C1515]/70" />
+        <div className="absolute inset-0 bg-linear-to-r from-[#0b1324]/85 to-[var(--theme-primary)]/70" />
 
         <div className="relative mx-auto flex h-full max-w-6xl flex-col justify-center px-4 text-white sm:px-6">
           <Link
@@ -85,7 +85,7 @@ const JobDetails = () => {
             <ul className="mt-4 space-y-2 text-gray-700">
               {job.responsibilities.map((item) => (
                 <li key={item} className="flex items-start gap-2">
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#8C1515]" />
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--theme-primary)]" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -97,7 +97,7 @@ const JobDetails = () => {
             <ul className="mt-4 space-y-2 text-gray-700">
               {job.requirements.map((item) => (
                 <li key={item} className="flex items-start gap-2">
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#0f4c81]" />
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--theme-navy)]" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -124,7 +124,7 @@ const JobDetails = () => {
                   <Link
                     key={item.id}
                     to={`/job/${item.id}`}
-                    className="flex items-center justify-between border border-gray-200 px-4 py-3 text-sm font-semibold text-gray-800 hover:border-[#8C1515] hover:text-[#8C1515]"
+                    className="flex items-center justify-between border border-gray-200 px-4 py-3 text-sm font-semibold text-gray-800 hover:border-[var(--theme-primary)] hover:text-[var(--theme-primary)]"
                   >
                     <span>{item.title}</span>
                     <FiArrowRight />
@@ -140,39 +140,39 @@ const JobDetails = () => {
             <h3 className="text-xl font-bold text-gray-900">Job Snapshot</h3>
             <div className="mt-4 space-y-3 text-sm text-gray-700">
               <p className="flex items-center gap-2">
-                <FiBriefcase className="text-[#8C1515]" />
+                <FiBriefcase className="text-[var(--theme-primary)]" />
                 <span>{job.department}</span>
               </p>
               <p className="flex items-center gap-2">
-                <FiMapPin className="text-[#8C1515]" />
+                <FiMapPin className="text-[var(--theme-primary)]" />
                 <span>{job.location}</span>
               </p>
               <p className="flex items-center gap-2">
-                <FiClock className="text-[#8C1515]" />
+                <FiClock className="text-[var(--theme-primary)]" />
                 <span>{job.type}</span>
               </p>
               <p className="flex items-center gap-2">
-                <FiMonitor className="text-[#8C1515]" />
+                <FiMonitor className="text-[var(--theme-primary)]" />
                 <span>{job.workplace}</span>
               </p>
               <p className="flex items-center gap-2">
-                <FiUser className="text-[#8C1515]" />
+                <FiUser className="text-[var(--theme-primary)]" />
                 <span>{job.experience}</span>
               </p>
               <p className="flex items-center gap-2">
-                <FiUsers className="text-[#8C1515]" />
+                <FiUsers className="text-[var(--theme-primary)]" />
                 <span>{job.openings} openings</span>
               </p>
               <p className="flex items-center gap-2">
-                <FiDollarSign className="text-[#8C1515]" />
+                <FiDollarSign className="text-[var(--theme-primary)]" />
                 <span>{job.salary}</span>
               </p>
               <p className="flex items-center gap-2">
-                <FiCalendar className="text-[#8C1515]" />
+                <FiCalendar className="text-[var(--theme-primary)]" />
                 <span>Posted: {formatDate(job.postedOn)}</span>
               </p>
               <p className="flex items-center gap-2">
-                <FiCalendar className="text-[#8C1515]" />
+                <FiCalendar className="text-[var(--theme-primary)]" />
                 <span>Deadline: {formatDate(job.deadline)}</span>
               </p>
             </div>
@@ -181,13 +181,13 @@ const JobDetails = () => {
               href={`mailto:info@ssdo.org.pk?subject=Application for ${encodeURIComponent(
                 job.title
               )}`}
-              className="mt-5 block bg-[#8C1515] px-5 py-3 text-center text-sm font-semibold text-white hover:bg-[#6f1111]"
+              className="mt-5 block bg-[var(--theme-primary)] px-5 py-3 text-center text-sm font-semibold text-white hover:bg-[var(--theme-primary-dark)]"
             >
               Apply Now
             </a>
             <Link
               to="/job"
-              className="mt-3 block border border-[#8C1515] px-5 py-3 text-center text-sm font-semibold text-[#8C1515] hover:bg-[#8C1515] hover:text-white"
+              className="mt-3 block border border-[var(--theme-primary)] px-5 py-3 text-center text-sm font-semibold text-[var(--theme-primary)] hover:bg-[var(--theme-primary)] hover:text-white"
             >
               Explore More Jobs
             </Link>
@@ -207,3 +207,4 @@ const JobDetails = () => {
 };
 
 export default JobDetails;
+

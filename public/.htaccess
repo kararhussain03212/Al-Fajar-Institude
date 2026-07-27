@@ -1,0 +1,15 @@
+RewriteEngine On
+Options -Indexes
+
+# Force HTTPS
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Force canonical domain
+RewriteCond %{HTTP_HOST} !^test\.swiftsigngeneraltrading\.com$ [NC]
+RewriteRule ^ https://test.swiftsigngeneraltrading.com%{REQUEST_URI} [L,R=301]
+
+# React SPA fallback
+RewriteRule ^index\.html$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.html [L]

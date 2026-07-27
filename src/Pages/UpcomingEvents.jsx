@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import { Link } from "react-router-dom";
 import { allEvents } from "../Data";
 
@@ -26,7 +26,7 @@ const events = (featuredEvents.length ? featuredEvents : allEvents).slice(0, 4).
 
 const UpcomingEvents = () => {
   return (
-    <section className="relative z-30 bg-[#f4f4f4] py-12 sm:py-16 md:py-20">
+    <section className="relative z-30 bg-[var(--theme-surface-soft)] py-12 sm:py-16 md:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <header className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
@@ -67,7 +67,7 @@ const UpcomingEvents = () => {
               {/* Content */}
               <div className="p-4 sm:p-5">
                 {/* Category */}
-                <p className="text-[#8C1515] text-xs font-semibold uppercase tracking-wide mb-2">
+                <p className="text-[var(--theme-primary)] text-xs font-semibold uppercase tracking-wide mb-2">
                   {event.category}
                 </p>
                 {/* Title */}
@@ -87,7 +87,7 @@ const UpcomingEvents = () => {
         <div className="flex justify-center">
           <Link
             to="/events"
-            className="inline-block bg-[#8C1515] hover:bg-[#6f1111] text-white text-base sm:text-lg font-semibold px-10 py-3 text-center transition-colors duration-300"
+            className="inline-block bg-[var(--theme-primary)] hover:bg-[var(--theme-primary-dark)] text-white text-base sm:text-lg font-semibold px-10 py-3 text-center transition-colors duration-300"
           >
             More events
           </Link>
@@ -98,3 +98,5 @@ const UpcomingEvents = () => {
 };
 
 export default UpcomingEvents;
+
+
