@@ -1,6 +1,7 @@
 ﻿import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "../components/Button";
+import staffPortrait from "../assets/staff/dr-ahsan-khan.png";
 
 const cards = [
   {
@@ -180,8 +181,8 @@ const CampusLife = () => {
         <div className="relative z-10 h-full flex items-center justify-center px-4">
           <div className="max-w-4xl mx-auto text-center text-white">
             <img
-              src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=300&auto=format&fit=crop"
-              alt="Renee Zhao"
+              src={staffPortrait}
+              alt="Dr. Ahsan Khan"
               className={`w-24 h-24 sm:w-32 sm:h-32 rounded-full mx-auto mb-6 object-cover border-4 border-white/20 transition-opacity duration-500 ${
                 isTestimonialVisible ? "opacity-100" : "opacity-0"
               }`}
@@ -199,14 +200,14 @@ const CampusLife = () => {
                 isTestimonialVisible ? "opacity-100" : "opacity-0"
               }`}
             >
-              Renee Zhao
+              Dr. Ahsan Khan
             </p>
             <p
               className={`mt-1 text-base sm:text-lg italic transition-opacity duration-500 ${
                 isTestimonialVisible ? "opacity-100" : "opacity-0"
               }`}
             >
-              Assistant Professor of Mechanical Engineering
+              Assistant Professor of Computer Science
             </p>
             <Link
               to="/academic"

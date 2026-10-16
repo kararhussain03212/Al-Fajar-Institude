@@ -227,8 +227,7 @@ export const allArticles = [
     title: "Admissions Open for Fall 2024 â€” Apply Today",
     excerpt:
       "Al-Fajr Institute announces admissions for Fall 2024. Students are invited to apply for a range of undergraduate programmes. Merit-based scholarships are also available.",
-    image:
-      "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200&q=80&auto=format&fit=crop",
+    image: "/news/admissions-fall-2024.png",
     date: "August 1, 2024",
     readTime: "2 min read",
     author: "Admissions Office",
